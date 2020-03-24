@@ -3,15 +3,14 @@
 </script>
 
 <style>
-    .fullviewportpane {
+    .fullwidthpane {
         width: 100vw;
         max-width: 100%;
-        min-height: 93vh;
         padding-top: 7vh;
         background-color: var(--background-color);
     }
 </style>
 
-<div class="fullviewportpane" style="--background-color: {backgroundColor}">
+<div class="fullwidthpane" style="--background-color: {backgroundColor}">
     <slot></slot>
 </div>

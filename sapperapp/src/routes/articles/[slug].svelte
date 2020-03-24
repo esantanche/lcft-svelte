@@ -2,15 +2,43 @@
 	export async function preload({ params, query }) {
 		// the `slug` parameter is available because
 		// this file is called [slug].svelte
-		const res = await this.fetch(`blog/${params.slug}.json`);
-		const data = await res.json();
+		//const res = await this.fetch(`blog/${params.slug}.json`);
+		//const data = await res.json();
 
-		if (res.status === 200) {
-			return { post: data };
-		} else {
-			this.error(res.status, data.message);
-		}
+		console.log("params",params);
+		console.log("query",query);
+
+
+		// params { slug: 'services' }
+		// query {}
+
+
+		const data = { title: "title", html: "boh html" };
+
+		return { post: data };
+
+		// if (res.status === 200) {
+		// 	return { post: data };
+		// } else {
+		// 	this.error(res.status, data.message);
+		// }
 	}
+
+	// export async function preload({ params, query }) {
+	// 	// the `slug` parameter is available because
+	// 	// this file is called [slug].svelte
+	// 	const res = await this.fetch(`blog/${params.slug}.json`);
+	// 	const data = await res.json();
+	//
+	// 	if (res.status === 200) {
+	// 		return { post: data };
+	// 	} else {
+	// 		this.error(res.status, data.message);
+	// 	}
+	// }
+	//console.log(params);
+
+	//console.log(query);
 </script>
 
 <script>
