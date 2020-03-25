@@ -4,8 +4,6 @@
 
     export let alt;
 
-    export let backgroundColor;
-
 </script>
 
 <style>
@@ -14,9 +12,8 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        background-color: var(--background-color);
     }
 
 </style>
 
-<img src={src} alt={alt} class="coverfittingimage" style="--background-color: {backgroundColor}"  />
+<img src={src} alt={alt} class="coverfittingimage"/>
