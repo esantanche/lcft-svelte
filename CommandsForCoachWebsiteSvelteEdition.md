@@ -29,6 +29,12 @@ sudo docker run -v /home/esantanche/SwProjects/leadershipcoachfortech-svelte-edi
 [root@e01f42592d53 sapperapp]$ npm run dev
 ```
 
+# To run a bash on the container
+
+```bash
+sudo docker exec -i -t LcftSvelteEdition bash
+```
+
 FIXME FIXME
 
 # Running the image, I create a container

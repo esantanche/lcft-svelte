@@ -13,6 +13,8 @@
     }
 </style>
 
-<a rel='prefetch' href={to} class="standardlink">
+<a href={to} class="standardlink">
     <slot></slot>
 </a>
+
+<!--rel='prefetch'-->

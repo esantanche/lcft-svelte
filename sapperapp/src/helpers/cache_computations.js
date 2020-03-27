@@ -1,3 +1,5 @@
+// FIXME not sure that this is in use
+
 /**
  * This helper function calculates the number of the next page to fetch.
  * If we have 30 articles to fetch and we already have 12 articles in cache,
