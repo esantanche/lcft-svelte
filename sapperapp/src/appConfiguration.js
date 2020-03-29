@@ -20,6 +20,7 @@ export const APP_CONFIGURATION = {
     },
     // The base url of the backend
     backendUrl: 'https://backend.emanuelesantanche.com',
+    homePageUrl: 'https://leadershipcoachfortech.com',
     // Number of articles in a page of results
     fetchPageSize: 6,
     topicURL2topicLookupTable: {

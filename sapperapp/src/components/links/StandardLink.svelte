@@ -13,7 +13,7 @@
     }
 </style>
 
-<a href={to} class="standardlink">
+<a on:click href={to} class="standardlink">
     <slot></slot>
 </a>
 

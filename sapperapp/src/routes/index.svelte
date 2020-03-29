@@ -18,6 +18,7 @@
 
 	let screenWidth;
 
+	// FIXME this function may have been duplicated
 	function backgroundColor(screenWidth, configuration, itIsLeftColumn, row) {
 
 		let useLighterColor = true;
@@ -98,7 +99,7 @@
 		<ColumnsPane>
 			<span slot="left">
 
-				<StandardLink to={"/articles/services"}>
+				<StandardLink to={"/articles/services/1"}>
 					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, 0)}>
 
 						<OneThirdHeightPane>
@@ -116,7 +117,7 @@
 			</span>
 			<span slot="right">
 
-				<StandardLink to={"/articles/leadership"}>
+				<StandardLink to={"/articles/leadership/1"}>
 
 					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, false, 0)}>
 						<OneThirdHeightPane>
@@ -141,7 +142,7 @@
 		<ColumnsPane>
 			<span slot="left">
 
-				<StandardLink to={"/articles/testimonials"}>
+				<StandardLink to={"/articles/testimonials/1"}>
 
 					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, 1)}>
 
@@ -161,7 +162,7 @@
 			</span>
 			<span slot="right">
 
-				<StandardLink to={"/articles/success-stories"}>
+				<StandardLink to={"/articles/success-stories/1"}>
 
 					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, false, 1)}>
 
@@ -188,7 +189,7 @@
 		<ColumnsPane>
 			<span slot="left">
 
-				<StandardLink to={"/articles/tech-watch"}>
+				<StandardLink to={"/articles/tech-watch/1"}>
 
 					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, 2)}>
 

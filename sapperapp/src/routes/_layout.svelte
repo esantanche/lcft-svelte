@@ -1,7 +1,9 @@
 <script>
-	// import Nav from '../components/Nav.svelte';
+    import StandardFooter from "../components/footers/StandardFooter.svelte";
+    import StandardHeader from "../components/headers/StandardHeader.svelte";
+    // import Nav from '../components/Nav.svelte';
 
-	// export let segment;
+    // export let segment;
 </script>
 
 <style>
@@ -15,12 +17,14 @@
 	/*}*/
 </style>
 
+<StandardHeader />
+
 <!--<Nav {segment}/>-->
 
 <slot></slot>
 
 
-
+<StandardFooter />
 <!--position: relative;-->
 <!--max-width: 56em;-->
 <!--background-color: white;-->
