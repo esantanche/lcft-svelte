@@ -18,13 +18,12 @@
 
 </style>
 
-<div class="standardbutton" style="--background: {APP_CONFIGURATION.defaultColorsTable["BLUE"]};
-                                   --border-color: {APP_CONFIGURATION.defaultColorsTable["BLUE"]};
-                                   --font-family: {APP_CONFIGURATION.fontFamily};
-                                   --color: {APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]}">
+<button type="submit" class="standardbutton" style="--background: {APP_CONFIGURATION.defaultColorsTable["BLUE"]};
+                                      --border-color: {APP_CONFIGURATION.defaultColorsTable["BLUE"]};
+                                      --font-family: {APP_CONFIGURATION.fontFamily};
+                                      --color: {APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]}">
 
     <slot></slot>
 
-</div>
-
+</button>
 

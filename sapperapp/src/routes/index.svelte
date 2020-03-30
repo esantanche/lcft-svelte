@@ -15,6 +15,8 @@
 	import CoverFittingImage from "../components/images/CoverFittingImage.svelte";
 	import CentredTextBox from "../components/boxes/CentredTextBox.svelte";
 	import ColoredPane from "../components/panes/ColoredPane.svelte";
+	import LetMeDefendYouForm from "../components/forms/LetMeDefendYouForm.svelte";
+	import ContentPane from "../components/panes/ContentPane.svelte";
 
 	let screenWidth;
 
@@ -227,6 +229,14 @@
 <!--	</HeadlinePane>-->
 
 	<SeparatorPane/>
+
+	<ContentPane>
+		<LetMeDefendYouForm />
+
+
+	</ContentPane>
+
+
 
 <!--	<ContentPane>-->
 

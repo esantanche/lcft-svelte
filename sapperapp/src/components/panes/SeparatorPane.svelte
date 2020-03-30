@@ -3,7 +3,8 @@
     export let size = undefined;
 
     const sizes = { "standard": "5vh",
-                    "short": "20px" };
+                    "short": "20px",
+                    "veryshort": "10px" };
 
     function height(size) {
 
