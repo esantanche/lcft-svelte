@@ -1,20 +1,15 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
     import { APP_CONFIGURATION } from '../../appConfiguration';
 
     export let color = undefined;
 
     let screenWidth;
-
-    function textColor(color) {
-
-        let textColor = APP_CONFIGURATION.defaultColorsTable["WHITESHADE"];
-
-        if (color)
-            textColor = color;
-
-        return textColor;
-    }
-
 
     function fontSize(screenWidth, configuration) {
 
@@ -42,7 +37,7 @@
 <svelte:window bind:innerWidth={screenWidth} />
 
 <div class="narrationtext" style="--font-family: {APP_CONFIGURATION.fontFamily};
-                                  --text-color: {textColor(color)};
+                                  --text-color: {color ? color : APP_CONFIGURATION.defaultColorsTable['WHITESHADE']};
                                   --font-size: {fontSize(screenWidth, APP_CONFIGURATION)}" >
     <slot></slot>
 </div>

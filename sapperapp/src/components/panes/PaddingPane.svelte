@@ -1,5 +1,11 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
-    export let isItLeftPadding;
+    export let isItLeftPadding = undefined;
 </script>
 
 <style>
@@ -11,11 +17,7 @@
 
 </style>
 
-<div class="paddingpane" style="--padding-left: {isItLeftPadding ? '5vw' : '0'};
-                                --padding-right: {isItLeftPadding ? '0' : '5vw'}">
+<div class="paddingpane" style="--padding-left: {isItLeftPadding ? '6vw' : '0'};
+                                --padding-right: {isItLeftPadding ? '0' : '6vw'}">
     <slot></slot>
 </div>
-
-
-<!--padding-left: props => props.isItLeftPadding ? "5vw" : "0",-->
-<!--padding-right: props => props.isItLeftPadding ? "0" : "5vw"-->

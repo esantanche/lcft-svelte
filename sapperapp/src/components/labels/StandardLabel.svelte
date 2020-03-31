@@ -1,19 +1,12 @@
-<script>
-    import { APP_CONFIGURATION } from '../../appConfiguration';
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
 
-    // export let clickable = false;
-    //
-    // const sizes = { "standard": "5vh",
-    //                 "short": "20px" };
-    //
-    // function height(size) {
-    //
-    //     if (sizes[size])
-    //         return sizes[size];
-    //     else
-    //         return sizes["standard"];
-    //
-    // }
+<script>
+
+    import { APP_CONFIGURATION } from '../../appConfiguration';
 
     export let fieldFor;
 
@@ -34,8 +27,3 @@
                                            --color: {APP_CONFIGURATION.defaultColorsTable['WHITESHADE']}">
     <slot></slot>
 </label>
-
-
-<!--on:click means that click events will be passed to the parent component-->
-
-<!--<i on:click class="material-icons standardicon" style="&#45;&#45;font-family: {APP_CONFIGURATION.fontFamily};"</i>-->

@@ -1,8 +1,19 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
+	import * as Sentry from '@sentry/browser';
+
 	export let status;
 	export let error;
 
 	const dev = process.env.NODE_ENV === 'development';
+
+	Sentry.captureMessage(status + "/" + error.message);
+
 </script>
 
 <style>
@@ -31,9 +42,17 @@
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+{#if status === 404}
+	<h2>Sorry, we couldn't find the page you are looking for.</h2>
 
-<p>{error.message}</p>
+	<p>You may want to restart from the <a href="/">home</a>.</p>
+{:else}
+	<h2>Sorry, there has been a problem. Please reload the page.</h2>
+
+	<p>Status: {status}</p>
+
+	<p>Error message: {error.message}</p>
+{/if}
 
 {#if dev && error.stack}
 	<pre>{error.stack}</pre>

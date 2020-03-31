@@ -1,9 +1,16 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
+	import {backgroundColor} from '../helpers/background_color';
+	import {APP_CONFIGURATION} from '../appConfiguration';
+
 	import FullViewPortPane from "../components/panes/FullViewPortPane.svelte";
 	import FullWidthPane from "../components/panes/FullWidthPane.svelte";
 	import ShieldPane from "../components/panes/ShieldPane.svelte";
-	import NarratinPane from "../components/panes/NarrationPane.svelte";
-	import {APP_CONFIGURATION} from '../appConfiguration';
 	import NarrationPane from "../components/panes/NarrationPane.svelte";
 	import NarrationText from "../components/texts/NarrationText.svelte";
 	import HeadlineText from "../components/texts/HeadlineText.svelte";
@@ -20,26 +27,6 @@
 
 	let screenWidth;
 
-	// FIXME this function may have been duplicated
-	function backgroundColor(screenWidth, configuration, itIsLeftColumn, row) {
-
-		let useLighterColor = true;
-
-		if (itIsLeftColumn)
-			useLighterColor = !useLighterColor;
-
-		if (row % 2 === 0 && (screenWidth >= configuration.responsiveBreakpoints.large))
-			useLighterColor = !useLighterColor;
-
-		// console.log("backgroundColor: " + row + " --- " + itIsLeftColumn + " --- " + useLighterColor);
-
-		if (useLighterColor)
-			return configuration.defaultColorsTable["DARKGREY"];
-		else
-			return configuration.defaultColorsTable["VERYDARKGREY"];
-
-	}
-
 </script>
 
 <style>
@@ -47,7 +34,7 @@
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Leadership Coach for Tech</title>
 </svelte:head>
 
 <svelte:window bind:innerWidth={screenWidth} />
@@ -79,6 +66,8 @@
 				<i>Taming the complexity beast &mdash; Tackling management by fear &mdash;
 					Managing motivation &mdash; Managing time &mdash; Designing recruitment processes.</i>
 			</HeadlineText>
+
+			<SeparatorPane/>
 
 			<SeparatorPane/>
 
@@ -222,27 +211,17 @@
 		<img src="shield-LIGHTGREY.png" alt="Leadership Coach for Tech" width="100%" />
 	</ShieldPane>
 
-<!--	<HeadlinePane>-->
-<!--		<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>-->
-<!--			Contact me-->
-<!--		</HeadlineText>-->
-<!--	</HeadlinePane>-->
+	<NarrationPane>
+		<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
+			Contact me
+		</HeadlineText>
+	</NarrationPane>
 
 	<SeparatorPane/>
 
 	<ContentPane>
 		<LetMeDefendYouForm />
-
-
 	</ContentPane>
-
-
-
-<!--	<ContentPane>-->
-
-<!--		<LetMeDefendYouScreen/>-->
-
-<!--	</ContentPane>-->
 
 	<SeparatorPane/>
 

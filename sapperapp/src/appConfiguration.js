@@ -33,9 +33,3 @@ export const APP_CONFIGURATION = {
     fontFamily: "Lato, sans-serif",
     fontFamilyForFields: "Roboto, sans-serif",
 };
-
-// xs, extra-small: 0px or larger
-// sm, small: 600px or larger
-// md, medium: 960px or larger
-// lg, large: 1280px or larger
-// xl, extra-large: 1920px or larger

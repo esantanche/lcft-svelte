@@ -1,4 +1,11 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
+
     import { APP_CONFIGURATION } from '../../appConfiguration';
 
 </script>
@@ -18,7 +25,7 @@
 
 </style>
 
-<button type="submit" class="standardbutton" style="--background: {APP_CONFIGURATION.defaultColorsTable["BLUE"]};
+<button on:click type="submit" class="standardbutton" style="--background: {APP_CONFIGURATION.defaultColorsTable["BLUE"]};
                                       --border-color: {APP_CONFIGURATION.defaultColorsTable["BLUE"]};
                                       --font-family: {APP_CONFIGURATION.fontFamily};
                                       --color: {APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]}">

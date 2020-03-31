@@ -4,7 +4,7 @@
  * @param {object} error An error object. Many exception handling processes return such an object.
  * @returns {string} The error message
  */
-function error_message_from_error(error) {
+export function error_message_from_error(error) {
 
     if (error.status) {
 
@@ -20,5 +20,3 @@ function error_message_from_error(error) {
     }
 
 }
-
-export default error_message_from_error;

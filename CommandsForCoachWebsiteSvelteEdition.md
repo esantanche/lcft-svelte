@@ -35,33 +35,20 @@ sudo docker run -v /home/esantanche/SwProjects/leadershipcoachfortech-svelte-edi
 sudo docker exec -i -t LcftSvelteEdition bash
 ```
 
-FIXME FIXME
+# To build the project
 
-# Running the image, I create a container
-[esantanche@luna ~]$ sudo docker run -v /home/esantanche/SwProjects/Drupal8RestApiShowbox/:/app -w /app -t -d -p 3000:3000 --name=Drupal8RestApiShowbox nodejsgitbashnpm
-The container will be named Drupal8RestApiShowbox.
+```bash
+[root@e01f42592d53 app]$ cd sapperapp/
+[root@e01f42592d53 sapperapp]$ npm run build
+```
 
-If you already have a container, don't use the command above, just start it.
+# To copy the project to production or testing
 
-# Exec a bash on the container
-sudo docker exec -i -t Drupal8RestApiShowbox bash
+You need to copy the entire folder /sapperapp/, in my case /vol/WORKnARCH/SwProjects/leadershipcoachfortech-svelte-edition/sapperapp/.
 
-# Start the dev server
-Open a console on the container.
+# To run the app on the server
 
-Run these commands: 
-[root@2b7a67476c15 app]# cd sapperapp/
-[root@2b7a67476c15 sapperapp]# npm run dev
-
-Open http://localhost:3000/
-
-# Installing Sapper in the container (only once per container!)
-bash-5.0# npx degit "sveltejs/sapper-template#rollup" sapperapp
-bash-5.0# cd sapperapp/
-bash-5.0# npm install
-bash-5.0# npm run dev
-
-# Build, or better, export the application
-[root@2b7a67476c15 sapperapp]# npx sapper export
-
-
+```bash
+root@FREEDOMANDCOURAGE:/srv/sites/testing.leadershipcoachfortech.com/sapperapp# export PORT=3001
+root@FREEDOMANDCOURAGE:/srv/sites/testing.leadershipcoachfortech.com/sapperapp# nohup node __sapper__/build &
+```

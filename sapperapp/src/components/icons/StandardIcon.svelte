@@ -1,3 +1,9 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
 
     export let clickable = false;
@@ -21,13 +27,11 @@
     .standardicon {
         font-size: 3rem;
         cursor: var(--cursor);
-        /*cursor: pointer;*/
     }
-    /*cursor: props => props.onclick ? "pointer" : "default"*/
 
 </style>
 
-<!--on:click means that click events will be passed to the parent component-->
+<!-- on:click means that click events will be passed to the parent component -->
 
 <i on:click class="material-icons standardicon" style="--cursor: {clickable ? 'pointer' : 'default'}">
     <slot></slot>

@@ -1,29 +1,25 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script context="module">
 
 	import {APP_CONFIGURATION} from '../../appConfiguration';
 	import {titleToSlug} from '../../helpers/title_to_slug';
+	import {backgroundColor} from '../../helpers/background_color';
+	import {error_message_from_error} from "../../helpers/errorMessages";
+	import * as Sentry from '@sentry/browser';
 
-	// FIXME session is useless and host too
-	export async function preload({host, params}, session) {
-
-		// console.log("preload ", params);
-		// console.log("preload ", host);
-		// console.log("processbrowser ", process.browser);
+	export async function preload({ params }) {
 
 		let [topic, page] = params.slug;
-
-		console.log("params " + topic + "," + page);
-
 
 		if (typeof page == "undefined")
 			page = 1;
 		else
 			page = parseInt(page);
-
-
-		// page starts from 1
-
-		//if (process.browser) return;
 
 		let topicForRestApi = APP_CONFIGURATION.topicURL2topicLookupTable[topic];
 
@@ -32,20 +28,31 @@
 
 		const res = await this.fetch(`${APP_CONFIGURATION.backendUrl}/rest/EMS/v2/view/articles?_format=json&field_ems_topic_target_id=${topicForRestApi}&page=${page - 1}`);
 
-		// FIXME what if res.ok is false?
+		if (!res.ok) {
 
-		const jsonresponse = await res.json();
+			console.error("Error in fetching articles list", res);
 
-		const articles = jsonresponse.results;
+			const error_message = error_message_from_error(res);
 
-		const dataBundle = {
-			articles: articles,
-			count: jsonresponse.count,
-			topic: topic,
-			page: page
-		};
+			Sentry.captureMessage(error_message);
 
-		return {dataBundle};
+			throw new Error(error_message);
+
+		} else {
+
+			const jsonresponse = await res.json();
+
+			const articles = jsonresponse.results;
+
+			const dataBundle = {
+				articles: articles,
+				count: jsonresponse.count,
+				topic: topic,
+				page: page
+			};
+
+			return {dataBundle};
+		}
 
 	}
 
@@ -65,8 +72,6 @@
 	import SeparatorPane from "../../components/panes/SeparatorPane.svelte";
 	import StandardButton from "../../components/buttons/StandardButton.svelte";
 
-
-	// FIXME rename this
 	export let dataBundle;
 
 	let screenWidth;
@@ -83,7 +88,7 @@
 	}, []);
 
 	/**
-	 * FIXME
+	 * FIXME just docs
 	 * page starts from 1
 	 *
 	 * @param page
@@ -96,37 +101,13 @@
 		return (page * pagesize) < count;
 	}
 
-	// FIXME this function may have been duplicated
-	function backgroundColor(screenWidth, configuration, itIsLeftColumn, row) {
-
-		let useLighterColor = true;
-
-		if (itIsLeftColumn)
-			useLighterColor = !useLighterColor;
-
-		if (row % 2 === 0 && (screenWidth >= configuration.responsiveBreakpoints.large))
-			useLighterColor = !useLighterColor;
-
-		// console.log("backgroundColor: " + row + " --- " + itIsLeftColumn + " --- " + useLighterColor);
-
-		if (useLighterColor)
-			return configuration.defaultColorsTable["DARKGREY"];
-		else
-			return configuration.defaultColorsTable["VERYDARKGREY"];
-
-	}
-
 </script>
 
-
-
-<style>
-
-</style>
+<svelte:head>
+	<title>Leadership Coach for Tech, {APP_CONFIGURATION.topicURL2topicLookupTable[dataBundle.topic]}</title>
+</svelte:head>
 
 <svelte:window bind:innerWidth={screenWidth} />
-
-
 
 <WideContentPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
 	<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}
@@ -137,75 +118,66 @@
 	</HeadlineText>
 </WideContentPane>
 
-
 <WideContentPane>
 
+	{#each articles_pairs as pair_of_articles, index}
 
+		<ColumnsPane>
 
-{#each articles_pairs as pair_of_articles, index}
-	<!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
+			<span slot="left">
 
-	<ColumnsPane>
+				<StandardLink to={"/article/" + pair_of_articles[0].nid + "/" + titleToSlug(pair_of_articles[0].title)}>
 
-		<span slot="left">
-
-			<StandardLink to={"/article/" + pair_of_articles[0].nid + "/" + titleToSlug(pair_of_articles[0].title)}>
-
-				<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, index)}>
-
-					<OneThirdHeightPane>
-
-						<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_articles[0].field_image}
-										   alt={pair_of_articles[0].title}/>
-
-					</OneThirdHeightPane>
-
-					<CentredTextBox size="short">
-						<HeadlineText>{pair_of_articles[0].title}</HeadlineText>
-					</CentredTextBox>
-
-				</ColoredPane>
-
-			</StandardLink>
-
-		</span>
-
-		<span slot="right">
-
-			{#if pair_of_articles.length === 2}
-
-				<StandardLink to={"/article/" + pair_of_articles[1].nid + "/" + titleToSlug(pair_of_articles[1].title)}>
-
-					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, false, index)}>
+					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, index)}>
 
 						<OneThirdHeightPane>
 
-							<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_articles[1].field_image}
-											   alt={pair_of_articles[1].title}/>
+							<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_articles[0].field_image}
+											   alt={pair_of_articles[0].title}/>
 
 						</OneThirdHeightPane>
 
 						<CentredTextBox size="short">
-							<HeadlineText>{pair_of_articles[1].title}</HeadlineText>
+							<HeadlineText>{pair_of_articles[0].title}</HeadlineText>
 						</CentredTextBox>
 
 					</ColoredPane>
 
 				</StandardLink>
 
-			{/if}
-		</span>
+			</span>
 
-	</ColumnsPane>
+			<span slot="right">
 
-{/each}
+				{#if pair_of_articles.length === 2}
 
+					<StandardLink to={"/article/" + pair_of_articles[1].nid + "/" + titleToSlug(pair_of_articles[1].title)}>
+
+						<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, false, index)}>
+
+							<OneThirdHeightPane>
+
+								<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_articles[1].field_image}
+												   alt={pair_of_articles[1].title}/>
+
+							</OneThirdHeightPane>
+
+							<CentredTextBox size="short">
+								<HeadlineText>{pair_of_articles[1].title}</HeadlineText>
+							</CentredTextBox>
+
+						</ColoredPane>
+
+					</StandardLink>
+
+				{/if}
+			</span>
+
+		</ColumnsPane>
+
+	{/each}
 
 </WideContentPane>
-
 
 {#if morePages(dataBundle.page, dataBundle.count, APP_CONFIGURATION.fetchPageSize)}
 
@@ -217,15 +189,6 @@
 		</MarginTopPane>
 		<SeparatorPane size="short" />
 	</CenteringPane>
-
-<!--	<CenteringPane>-->
-<!--		<MarginTopPane size="tall">-->
-<!--			<StandardButton onclick={this.handleLoadMoreButtonClick.bind(this)}>-->
-<!--				MORE-->
-<!--			</StandardButton>-->
-<!--		</MarginTopPane>-->
-<!--		<SeparatorPane size="short" />-->
-<!--	</CenteringPane>-->
 
 {/if}
 

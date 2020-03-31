@@ -1,8 +1,8 @@
 {
 	"background_color": "#ffffff",
-	"theme_color": "#333333",
-	"name": "TODO",
-	"short_name": "TODO",
+	"theme_color": "#4178BE",
+	"name": "Leadership Coach for Tech",
+	"short_name": "LCFT",
 	"display": "minimal-ui",
 	"start_url": "/",
 	"icons": [

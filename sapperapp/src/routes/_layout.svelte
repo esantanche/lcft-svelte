@@ -1,39 +1,20 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
     import StandardFooter from "../components/footers/StandardFooter.svelte";
     import StandardHeader from "../components/headers/StandardHeader.svelte";
-    // import Nav from '../components/Nav.svelte';
 
+    // The absence of the prop segment triggers this warning: "<Layout> was created with unknown prop 'segment'"
+    // But here I don't need this prop and if I define it, I get an error
     // export let segment;
 </script>
 
-<style>
-	/*main {*/
-	/*	position: relative;*/
-	/*	max-width: 56em;*/
-	/*	background-color: white;*/
-	/*	padding: 2em;*/
-	/*	margin: 0 auto;*/
-	/*	box-sizing: border-box;*/
-	/*}*/
-</style>
-
 <StandardHeader />
-
-<!--<Nav {segment}/>-->
 
 <slot></slot>
 
-
 <StandardFooter />
-<!--position: relative;-->
-<!--max-width: 56em;-->
-<!--background-color: white;-->
-<!--padding: 2em;-->
-<!--margin: 0 auto;-->
-<!--box-sizing: border-box;-->
-
-
-<!--<main>-->
-<!--	<slot></slot>-->
-<!--</main>-->
-

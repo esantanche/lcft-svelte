@@ -1,23 +1,18 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
-    // FIXME check these imports
-    import FullWidthPane from "../panes/FullWidthPane.svelte";
-    import {APP_CONFIGURATION} from '../../appConfiguration';
-    import WideContentPane from "../panes/WideContentPane.svelte";
-    import SpaceBetweenPane from "../panes/SpaceBetweenPane.svelte";
-    import NarrationText from "../texts/NarrationText.svelte";
-    import MarginTopPane from "../panes/MarginTopPane.svelte";
-    import StandardLink from "../links/StandardLink.svelte";
     import MenuButtonPane from "../panes/MenuButtonPane.svelte";
     import StandardIcon from "../icons/StandardIcon.svelte";
     import StandardMenu from "../menus/StandardMenu.svelte";
     import { goto } from '@sapper/app';
 
-
     let menuButtonVisible = true;
 
     function onclick() {
-
-        console.log("onclick in sapperapp/src/components/headers/StandardHeader.svelte");
 
         menuButtonVisible = false;
 
@@ -25,19 +20,13 @@
 
     function onclose() {
 
-        console.log("onclose in std header");
-
         menuButtonVisible = true;
 
     }
 
     function onhome() {
 
-        // https://github.com/sveltejs/sapper/issues/29
-        console.log("onhome in std header");
-
         menuButtonVisible = true;
-
 
         goto("/");
 
@@ -57,9 +46,3 @@
     <StandardMenu on:close={onclose}
                   on:home={onhome} />
 {/if}
-
-
-
-<!--<MenuScreen open={this.state.menuOpen}-->
-<!--            onClose={this.handleMenuClose.bind(this)}-->
-<!--            onHome={this.handleGoToHome.bind(this)}/>-->

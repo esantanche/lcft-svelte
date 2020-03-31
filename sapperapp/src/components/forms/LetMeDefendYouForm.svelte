@@ -1,28 +1,25 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
+    import {APP_CONFIGURATION} from '../../appConfiguration';
+    import {error_message_from_error} from "../../helpers/errorMessages";
+    import * as Sentry from '@sentry/browser';
+
     import StandardButton from "../buttons/StandardButton.svelte";
     import SeparatorPane from "../panes/SeparatorPane.svelte";
     import StandardLabel from "../labels/StandardLabel.svelte";
-    import {APP_CONFIGURATION} from '../../appConfiguration';
     import MessageDialog from "../dialogs/MessageDialog.svelte";
 
-
     let messageDialogOpen = false;
-
-    // let error_boolean = false;
+    let messageDialogTitle;
+    let messageDialogMessage;
+    let messageDialogItIsAnErrorMessage;
 
     async function handleSubmit(event) {
-        // console.log(event);
-        // console.log(event.target);
-        console.log(event.target.email.value);
-        console.log(event.target.name.value);
-        console.log(event.target.message.value);
-
-        messageDialogOpen = true;
-
-        console.log("messageDialogOpen",messageDialogOpen);
-
-        // FIXME
-        return;
 
         const message_node_details = {
             type: [{"target_id": "lcft_let_me_defend_you_message"}],
@@ -42,18 +39,23 @@
         });
 
         if (!res.ok) {
-            // FIXME excpt handling and message
+            console.error("Error in sending message", res);
 
-            console.error("Error in sending message");
+            const error_message = error_message_from_error(res);
 
-            // FIXME pop up with message
+            Sentry.captureMessage(error_message);
+
+            messageDialogItIsAnErrorMessage = true;
+            messageDialogTitle = "Something went wrong";
+            messageDialogMessage = "Please, save your message, reload the page and try again.";
+            messageDialogOpen = true;
+
         } else {
 
-            // FIXME success message
-            console.log("Success in sending message");
-
-            // FIXME clean the form
-            // FIXME pop up with message
+            messageDialogItIsAnErrorMessage = false;
+            messageDialogTitle = "Message sent";
+            messageDialogMessage = "Thank you for your message!";
+            messageDialogOpen = true;
 
             document.getElementById('letmedefendyouform').reset();
 
@@ -63,13 +65,9 @@
 
     function validateField(event) {
         let field = event.target;
-        console.log(field.id);
-
-        // var tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
         switch (field.id) {
             case "name":
-                // code block
                 if (field.value === '') {
                     field.setCustomValidity('The name is required');
                 } else {
@@ -77,8 +75,6 @@
                 }
                 break;
             case "email":
-                // code block
-
                 if (field.value === '') {
                     field.setCustomValidity('The email address is required');
                 } else if (field.validity.typeMismatch) {
@@ -88,8 +84,6 @@
                 }
                 break;
             case "message":
-                // code block
-
                 if (field.value === '') {
                     field.setCustomValidity('The message is required');
                 } else {
@@ -97,7 +91,9 @@
                 }
                 break;
             default:
-                // code block
+                const error_message = "Impossible! In validateField I got a field.id that is not managed! field.id=" + field.id;
+                console.error(error_message);
+                Sentry.captureMessage(error_message);
         }
 
         return true;
@@ -151,8 +147,9 @@
 
 {#if messageDialogOpen}
 
-here it is
-
-    <MessageDialog />
+    <MessageDialog on:click={() => messageDialogOpen = false}
+                   title={messageDialogTitle}
+                   message={messageDialogMessage}
+                   it_is_an_error_message={messageDialogItIsAnErrorMessage}/>
 
 {/if}

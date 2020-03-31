@@ -1,25 +1,25 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
-    // FIXME check these imports
-    import FullWidthPane from "../panes/FullWidthPane.svelte";
     import {APP_CONFIGURATION} from '../../appConfiguration';
-    import WideContentPane from "../panes/WideContentPane.svelte";
-    import SpaceBetweenPane from "../panes/SpaceBetweenPane.svelte";
-    import NarrationText from "../texts/NarrationText.svelte";
-    import MarginTopPane from "../panes/MarginTopPane.svelte";
+
+    import FullWidthPane from "../panes/FullWidthPane.svelte";
     import StandardLink from "../links/StandardLink.svelte";
-    import MenuButtonPane from "../panes/MenuButtonPane.svelte";
     import StandardIcon from "../icons/StandardIcon.svelte";
     import MenuPane from "../panes/MenuPane.svelte";
     import HomeAndCloseButtonsPane from "../panes/HomeAndCloseButtonsPane.svelte";
     import PaddingPane from "../panes/PaddingPane.svelte";
     import ContentPane from "../panes/ContentPane.svelte";
     import ColumnsPane from "../panes/ColumnsPane.svelte";
-
-
-    import {createEventDispatcher} from 'svelte';
     import CentredTextBox from "../boxes/CentredTextBox.svelte";
     import HeadlineText from "../texts/HeadlineText.svelte";
     import ColoredPane from "../panes/ColoredPane.svelte";
+
+    import {createEventDispatcher} from 'svelte';
 
     const dispatch = createEventDispatcher();
 
@@ -46,14 +46,13 @@
 
         return colorToReturn;
     }
-
 </script>
 
 <svelte:window bind:innerWidth={screenWidth} />
 
 <MenuPane>
 
-    <FullWidthPane>
+    <FullWidthPane shortPadding={true}>
 
         <HomeAndCloseButtonsPane>
             <PaddingPane isItLeftPadding={true}>
@@ -94,7 +93,7 @@
                 <StandardLink to="/articles/leadership/1" on:click={() => dispatch('close')}>
                     <ColoredPane backgroundColor={colorForCentredTextBox(2, 'left')}>
                         <CentredTextBox size="veryshort">
-                            <HeadlineText>Services</HeadlineText>
+                            <HeadlineText>Leadership articles</HeadlineText>
                         </CentredTextBox>
                     </ColoredPane>
                 </StandardLink>
@@ -133,10 +132,10 @@
 
         <ColumnsPane>
 			<span slot="left">
-                <StandardLink to="FIXME" on:click={() => dispatch('close')}>
+                <StandardLink to="/let-me-defend-you" on:click={() => dispatch('close')}>
                     <ColoredPane backgroundColor={colorForCentredTextBox(4, 'left')}>
                         <CentredTextBox size="veryshort">
-                            <HeadlineText>FIXME contact me</HeadlineText>
+                            <HeadlineText>Contact me</HeadlineText>
                         </CentredTextBox>
                     </ColoredPane>
                 </StandardLink>

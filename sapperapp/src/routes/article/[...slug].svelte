@@ -1,27 +1,45 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script context="module">
 
 	import {APP_CONFIGURATION} from '../../appConfiguration';
+	import {error_message_from_error} from "../../helpers/errorMessages";
+	import * as Sentry from '@sentry/browser';
 
-	export async function preload({host, path, params, query}, session) {
+	export async function preload({ path, params }) {
 
-		let [nid, titleSlug] = params.slug;
-
-		// console.log("article preload nid=", nid);
-		// console.log("processbrowser ", process.browser);
-		console.log("article path=", path);
+		let [nid] = params.slug;
 
 		const res = await this.fetch(`${APP_CONFIGURATION.backendUrl}/rest/EMS/view/article?_format=json&nid=${nid}`);
 
-		const jsonresponse = await res.json();
+		if (!res.ok) {
 
-		const article = jsonresponse[0];
+			console.error("Error in fetching article", res);
 
-		const dataBundle = {
-			article: article,
-			path: path
-		};
+			const error_message = error_message_from_error(res);
 
-		return {dataBundle};
+			Sentry.captureMessage(error_message);
+
+			throw new Error(error_message);
+
+		} else {
+
+			const jsonresponse = await res.json();
+
+			const article = jsonresponse[0];
+
+			const dataBundle = {
+				article: article,
+				path: path
+			};
+
+			return {dataBundle};
+
+		}
 
 	}
 
@@ -34,13 +52,7 @@
 	import HeadlineText from "../../components/texts/HeadlineText.svelte";
 	import NarrationText from "../../components/texts/NarrationText.svelte";
 
-
-
-	// FIXME it lookslike this prop cannot be modified
 	export let dataBundle;
-
-	// console.log(dataBundle);
-
 </script>
 
 <style>
@@ -55,6 +67,7 @@
 		  APP_CONFIGURATION.backendUrl + dataBundle.article.field_image} />
 	<meta property='og:description' content={dataBundle.article.title} />
 	<meta property='og:url' content={APP_CONFIGURATION.homePageUrl + dataBundle.path} />
+	<title>Leadership Coach for Tech, {dataBundle.article.title}</title>
 </svelte:head>
 
 <ContentPane>

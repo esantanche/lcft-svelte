@@ -1,3 +1,9 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
     import { APP_CONFIGURATION } from '../../appConfiguration';
 
@@ -6,16 +12,6 @@
     let screenWidth;
 
     function contentPaneWidthFromScreenWidth(screenWidth, configuration) {
-
-        // paneWidthLargeScreen: {
-        //     width: "66vw"
-        // },
-        // paneWidthMediumScreen: {
-        //     width: "83vw"
-        // },
-        // paneWidthSmallScreen: {
-        //     width: "95vw"
-        // }
 
         if (screenWidth >= configuration.responsiveBreakpoints.large)
             return "50vw";
@@ -27,15 +23,6 @@
     }
 
 </script>
-
-<!--minHeight: "8vh",-->
-<!--display: "flex",-->
-<!--flexDirection: "column",-->
-<!--justifyContent: "center",-->
-<!--marginLeft: "auto",-->
-<!--marginRight: "auto",-->
-<!--backgroundColor: props => props.backgroundColor ? props.backgroundColor : "inherit"-->
-
 
 <style>
     .contentpane {

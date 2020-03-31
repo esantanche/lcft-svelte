@@ -1,3 +1,9 @@
+<!--
+@file FIXME Utility function to convert a title to a slug.
+The title belongs to an item. The slug is what we add to the url of the item to
+help search engines to index the item's page.
+-->
+
 <script>
     import { APP_CONFIGURATION } from '../../appConfiguration';
 
@@ -20,7 +26,6 @@
 
 <style>
     .narrationpane {
-        min-height: 45vw;
         margin-left: auto;
         margin-right: auto;
         width: var(--width);
@@ -32,4 +37,3 @@
 <div class="narrationpane" style="--width: {narrationPaneWidthFromScreenWidth(screenWidth, APP_CONFIGURATION)}">
     <slot></slot>
 </div>
-
