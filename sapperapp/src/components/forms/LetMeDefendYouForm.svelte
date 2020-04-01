@@ -135,7 +135,7 @@ help search engines to index the item's page.
 
     <StandardLabel fieldFor="message">Message</StandardLabel>
     <SeparatorPane size="veryshort" />
-    <textarea required id="message" rows="4" cols="50" />
+    <textarea required id="message" rows="5" cols="30" />
 
     <SeparatorPane/>
 

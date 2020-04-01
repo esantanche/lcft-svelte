@@ -13,6 +13,10 @@ help search engines to index the item's page.
     // export let segment;
 </script>
 
+<svelte:head>
+    <meta property="google-site-verification" content="PMDPQpQDqCmyGM4HeruuOXemu1X9UxBcU9qop3ywqOQ" />
+</svelte:head>
+
 <StandardHeader />
 
 <slot></slot>

@@ -10,7 +10,7 @@ help search engines to index the item's page.
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: flex-end;
     }
 
 </style>

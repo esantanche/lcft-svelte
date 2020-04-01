@@ -27,7 +27,7 @@ help search engines to index the item's page.
 
     let screenWidth;
 
-    function colorForCentredTextBox(rowNumber, columnName) {
+    function colorForCentredTextBox(screenWidth, rowNumber, columnName) {
 
         let colorToReturn;
 
@@ -70,7 +70,7 @@ help search engines to index the item's page.
         <ColumnsPane>
 			<span slot="left">
                 <StandardLink to="/articles/services/1" on:click={() => dispatch('close')}>
-                    <ColoredPane backgroundColor={colorForCentredTextBox(1, 'left')}>
+                    <ColoredPane backgroundColor={colorForCentredTextBox(screenWidth, 1, 'left')}>
                         <CentredTextBox size="veryshort">
                             <HeadlineText>Services</HeadlineText>
                         </CentredTextBox>
@@ -79,7 +79,7 @@ help search engines to index the item's page.
 			</span>
             <span slot="right">
                 <StandardLink to="/articles/success-stories/1" on:click={() => dispatch('close')}>
-                    <ColoredPane backgroundColor={colorForCentredTextBox(1, 'right')}>
+                    <ColoredPane backgroundColor={colorForCentredTextBox(screenWidth, 1, 'right')}>
                         <CentredTextBox size="veryshort">
                             <HeadlineText>Success stories</HeadlineText>
                         </CentredTextBox>
@@ -91,7 +91,7 @@ help search engines to index the item's page.
         <ColumnsPane>
 			<span slot="left">
                 <StandardLink to="/articles/leadership/1" on:click={() => dispatch('close')}>
-                    <ColoredPane backgroundColor={colorForCentredTextBox(2, 'left')}>
+                    <ColoredPane backgroundColor={colorForCentredTextBox(screenWidth, 2, 'left')}>
                         <CentredTextBox size="veryshort">
                             <HeadlineText>Leadership articles</HeadlineText>
                         </CentredTextBox>
@@ -100,7 +100,7 @@ help search engines to index the item's page.
 			</span>
             <span slot="right">
                 <StandardLink to="/articles/testimonials/1" on:click={() => dispatch('close')}>
-                    <ColoredPane backgroundColor={colorForCentredTextBox(2, 'right')}>
+                    <ColoredPane backgroundColor={colorForCentredTextBox(screenWidth, 2, 'right')}>
                         <CentredTextBox size="veryshort">
                             <HeadlineText>Testimonials</HeadlineText>
                         </CentredTextBox>
@@ -112,7 +112,7 @@ help search engines to index the item's page.
         <ColumnsPane>
 			<span slot="left">
                 <StandardLink to="/articles/tech-watch/1" on:click={() => dispatch('close')}>
-                    <ColoredPane backgroundColor={colorForCentredTextBox(3, 'left')}>
+                    <ColoredPane backgroundColor={colorForCentredTextBox(screenWidth, 3, 'left')}>
                         <CentredTextBox size="veryshort">
                             <HeadlineText>Tech watch</HeadlineText>
                         </CentredTextBox>
@@ -121,7 +121,7 @@ help search engines to index the item's page.
 			</span>
             <span slot="right">
                 <StandardLink to="/article/137/about-me" on:click={() => dispatch('close')}>
-                    <ColoredPane backgroundColor={colorForCentredTextBox(3, 'right')}>
+                    <ColoredPane backgroundColor={colorForCentredTextBox(screenWidth, 3, 'right')}>
                         <CentredTextBox size="veryshort">
                             <HeadlineText>About me</HeadlineText>
                         </CentredTextBox>
@@ -133,7 +133,7 @@ help search engines to index the item's page.
         <ColumnsPane>
 			<span slot="left">
                 <StandardLink to="/let-me-defend-you" on:click={() => dispatch('close')}>
-                    <ColoredPane backgroundColor={colorForCentredTextBox(4, 'left')}>
+                    <ColoredPane backgroundColor={colorForCentredTextBox(screenWidth, 4, 'left')}>
                         <CentredTextBox size="veryshort">
                             <HeadlineText>Contact me</HeadlineText>
                         </CentredTextBox>

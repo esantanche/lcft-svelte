@@ -182,7 +182,7 @@ help search engines to index the item's page.
 {#if morePages(dataBundle.page, dataBundle.count, APP_CONFIGURATION.fetchPageSize)}
 
 	<CenteringPane>
-		<MarginTopPane size="tall">
+		<MarginTopPane>
 			<StandardLink to={"/articles/" + dataBundle.topic + "/" + (dataBundle.page + 1)}>
 				<StandardButton>Next</StandardButton>
 			</StandardLink>

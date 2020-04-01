@@ -22,7 +22,7 @@ help search engines to index the item's page.
 	}
 
 	h1 {
-		font-size: 2.8em;
+		font-size: 1.8em;
 		font-weight: 700;
 		margin: 0 0 0.5em 0;
 	}
@@ -33,7 +33,7 @@ help search engines to index the item's page.
 
 	@media (min-width: 480px) {
 		h1 {
-			font-size: 4em;
+			font-size: 2.4em;
 		}
 	}
 </style>
@@ -43,11 +43,11 @@ help search engines to index the item's page.
 </svelte:head>
 
 {#if status === 404}
-	<h2>Sorry, we couldn't find the page you are looking for.</h2>
+	<h1>Sorry, we couldn't find the page you are looking for.</h1>
 
 	<p>You may want to restart from the <a href="/">home</a>.</p>
 {:else}
-	<h2>Sorry, there has been a problem. Please reload the page.</h2>
+	<h1>Sorry, there has been a problem. Please reload the page.</h1>
 
 	<p>Status: {status}</p>
 

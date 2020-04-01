@@ -29,11 +29,8 @@ help search engines to index the item's page.
 
 </script>
 
-<style>
-
-</style>
-
 <svelte:head>
+	<meta property="google-site-verification" content="PMDPQpQDqCmyGM4HeruuOXemu1X9UxBcU9qop3ywqOQ" />
 	<title>Leadership Coach for Tech</title>
 </svelte:head>
 

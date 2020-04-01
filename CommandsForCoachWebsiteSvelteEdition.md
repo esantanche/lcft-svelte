@@ -44,7 +44,11 @@ sudo docker exec -i -t LcftSvelteEdition bash
 
 # To copy the project to production or testing
 
-You need to copy the entire folder /sapperapp/, in my case /vol/WORKnARCH/SwProjects/leadershipcoachfortech-svelte-edition/sapperapp/.
+1. You need to copy the entire folder /sapperapp/, in my case /vol/WORKnARCH/SwProjects/leadershipcoachfortech-svelte-edition/sapperapp/.
+1. After the first copy, you need to copy the folders /vol/WORKnARCH/SwProjects/leadershipcoachfortech-svelte-edition/sapperapp/__sapper__/build/ and 
+/vol/WORKnARCH/SwProjects/leadershipcoachfortech-svelte-edition/sapperapp/static/
+1. Also, don't forget to restart the node server.
+1. If it's the testing website, you need the robots.txt file
 
 # To run the app on the server
 
@@ -52,3 +56,5 @@ You need to copy the entire folder /sapperapp/, in my case /vol/WORKnARCH/SwProj
 root@FREEDOMANDCOURAGE:/srv/sites/testing.leadershipcoachfortech.com/sapperapp# export PORT=3001
 root@FREEDOMANDCOURAGE:/srv/sites/testing.leadershipcoachfortech.com/sapperapp# nohup node __sapper__/build &
 ```
+
+You have to restart this node server every time you upload the folder build.
