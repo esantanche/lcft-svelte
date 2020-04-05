@@ -8,17 +8,22 @@ help search engines to index the item's page.
     import { APP_CONFIGURATION } from '../../appConfiguration';
 
     export let backgroundColor = undefined;
+    export let smallEdition = false;
 
     let screenWidth;
 
-    function contentPaneWidthFromScreenWidth(screenWidth, configuration) {
+    const widths = { standard: { small: 90, medium: 60, large: 50 }, small: { small: 90, medium: 60, large: 40 } }
+
+    function contentPaneWidthFromScreenWidth(screenWidth, configuration, smallEdition) {
+
+        const widthsToUse = smallEdition ? widths.small : widths.standard;
 
         if (screenWidth >= configuration.responsiveBreakpoints.large)
-            return "50vw";
+            return `${widthsToUse.large}vw`;
         else if (screenWidth >= configuration.responsiveBreakpoints.medium)
-            return "60vw";
+            return `${widthsToUse.medium}vw`;
         else
-            return "90vw";
+            return `${widthsToUse.small}vw`;
 
     }
 
@@ -35,7 +40,7 @@ help search engines to index the item's page.
 
 <svelte:window bind:innerWidth={screenWidth} />
 
-<div class="contentpane" style="--width: {contentPaneWidthFromScreenWidth(screenWidth, APP_CONFIGURATION)};
+<div class="contentpane" style="--width: {contentPaneWidthFromScreenWidth(screenWidth, APP_CONFIGURATION, smallEdition)};
                                 --background-color: {backgroundColor ? backgroundColor : 'inherit'}" >
     <slot></slot>
 </div>

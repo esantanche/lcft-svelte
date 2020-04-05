@@ -1,6 +1,3 @@
-
-FIXME
-
 # Creating the container for the project
 
 This is to be done once only.

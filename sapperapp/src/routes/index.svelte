@@ -216,7 +216,7 @@ help search engines to index the item's page.
 
 	<SeparatorPane/>
 
-	<ContentPane>
+	<ContentPane smallEdition={true}>
 		<LetMeDefendYouForm />
 	</ContentPane>
 

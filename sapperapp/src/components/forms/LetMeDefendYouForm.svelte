@@ -13,6 +13,7 @@ help search engines to index the item's page.
     import SeparatorPane from "../panes/SeparatorPane.svelte";
     import StandardLabel from "../labels/StandardLabel.svelte";
     import MessageDialog from "../dialogs/MessageDialog.svelte";
+    import CenteringPane from "../panes/CenteringPane.svelte";
 
     let messageDialogOpen = false;
     let messageDialogTitle;
@@ -139,9 +140,12 @@ help search engines to index the item's page.
 
     <SeparatorPane/>
 
-    <StandardButton>
-        GO!
-    </StandardButton>
+    <CenteringPane>
+        <StandardButton>
+            Send the message
+        </StandardButton>
+    </CenteringPane>
+
 
 </form>
 

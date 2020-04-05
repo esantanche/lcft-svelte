@@ -50,15 +50,9 @@ input[type=text], input[type=email], textarea {
 
 input[type=text], input[type=email] {
 	height: 1.5em;
-	width: 70%;
+	width: 100%;
 }
 
 textarea {
-	width: 75%;
-}
-
-@media (min-width: 600px) {
-	input[type=text], input[type=email], textarea {
-		width: 60%;
-	}
+	width: 100%;
 }
