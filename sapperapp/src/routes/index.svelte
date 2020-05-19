@@ -60,9 +60,16 @@ help search engines to index the item's page.
 			<SeparatorPane/>
 
 			<HeadlineText large={true}>
-				<i>Taming the complexity beast &mdash; Tackling management by fear &mdash;
-					Managing motivation &mdash; Managing time &mdash; Designing recruitment processes.</i>
+				    <i>&ndash; Taming the complexity beast &ndash;<br>
+					   &ndash; Catch the tech &ndash;<br>
+					   &ndash; Solving the agile riddle &ndash;<br>
+					   &ndash; Tackling management by fear &ndash;<br>
+					   &ndash; Managing motivation &ndash;<br>
+					   &ndash; Managing time &ndash;<br>
+					   &ndash; Designing recruitment processes &ndash;</i>
 			</HeadlineText>
+
+<!--			&mdash; &rArr;-->
 
 			<SeparatorPane/>
 

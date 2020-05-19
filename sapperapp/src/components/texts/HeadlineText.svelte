@@ -50,3 +50,5 @@ help search engines to index the item's page.
                                   --font-size: {fontSize(screenWidth, large, APP_CONFIGURATION)}"  >
     <slot></slot>
 </div>
+
+<!--text-align: center;-->
