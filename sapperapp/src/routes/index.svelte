@@ -62,7 +62,7 @@ help search engines to index the item's page.
 			<HeadlineText large={true}>
 				    <i>&ndash; Taming the complexity beast &ndash;<br>
 					   &ndash; Catch the tech &ndash;<br>
-					   &ndash; Solving the agile riddle &ndash;<br>
+					   &ndash; Solving the Agile riddle &ndash;<br>
 					   &ndash; Tackling management by fear &ndash;<br>
 					   &ndash; Managing motivation &ndash;<br>
 					   &ndash; Managing time &ndash;<br>
