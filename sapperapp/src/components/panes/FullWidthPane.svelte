@@ -7,18 +7,31 @@ help search engines to index the item's page.
 <script>
     export let backgroundColor = undefined;
     export let shortPadding = false;
+    export let makeItSticky = false;
+    export let doShadow = false;
+    export let doTransparency = false;
 </script>
 
 <style>
     .fullwidthpane {
         width: 100vw;
         max-width: 100%;
-        padding-top:  var(--padding-top);
+        padding-top: var(--padding-top);
         background-color: var(--background-color);
+        position: var(--position);
+        box-shadow: var(--boxshadow);
+        -moz-box-shadow: var(--boxshadow);
+        -webkit-box-shadow: var(--boxshadow);
     }
 </style>
 
 <div class="fullwidthpane" style="--background-color: {backgroundColor};
-                                  --padding-top: {shortPadding ? '3vh' : '7vh'}">
+                                  --padding-top: {shortPadding ? '3vh' : '7vh'};
+                                  --position: {makeItSticky ? 'fixed' : 'static'};
+                                  --boxshadow: {doShadow ? '0px 5px 0px -3px rgba(0,0,0,0.75)' : ''}">
     <slot></slot>
 </div>
+
+<!-- -webkit-box-shadow: 0px 10px 0px -3px rgba(0,0,0,0.75);-->
+<!-- -moz-box-shadow: 0px 10px 0px -3px rgba(0,0,0,0.75);-->
+<!--box-shadow: 0px 10px 0px -3px rgba(0,0,0,0.75);-->

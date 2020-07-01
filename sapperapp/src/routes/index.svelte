@@ -36,6 +36,15 @@ help search engines to index the item's page.
 
 <svelte:window bind:innerWidth={screenWidth} />
 
+<!--TODO fix this-->
+
+
+
+<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]} shortPadding={false}>
+	&nbsp;
+</FullWidthPane>
+
+
 <FullViewPortPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["BLUE"]}>
 
 	<ShieldPane>

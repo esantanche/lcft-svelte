@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="101ab55b-6ff5-4a5e-be51-0aae4e6e1f35" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommandsForCoachWebsiteSvelteEdition.md" beforeDir="false" afterPath="$PROJECT_DIR$/CommandsForCoachWebsiteSvelteEdition.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sapperapp/src/components/texts/HeadlineText.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/sapperapp/src/components/texts/HeadlineText.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sapperapp/src/components/headers/StandardHeader.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/sapperapp/src/components/headers/StandardHeader.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sapperapp/src/components/panes/FullWidthPane.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/sapperapp/src/components/panes/FullWidthPane.svelte" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sapperapp/src/routes/index.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/sapperapp/src/routes/index.svelte" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,48 +18,95 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sapperapp/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sapperapp/src/routes/index.svelte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="495">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
-                <element signature="e#2308#2315#0#HTML" expanded="true" />
+                <element signature="e#205#265#0#HTML" expanded="true" />
+                <element signature="e#1919#1925#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sapperapp/src/components/texts/HeadlineText.svelte">
+        <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/FullViewPortPane.svelte">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+            <state relative-caret-position="345">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sapperapp/src/routes/_layout.svelte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sapperapp/src/components/footers/StandardFooter.svelte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="29" selection-start-line="8" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sapperapp/src/components/texts/NarrationText.svelte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sapperapp/src/components/headers/StandardHeader.svelte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
               <folding>
-                <element signature="e#1271#1540#0#HTML" expanded="true" />
+                <element signature="e#208#268#0#HTML" expanded="true" />
+                <element signature="e#1399#1418#0#HTML" expanded="true" />
+                <element signature="e#1432#1438#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="210">
-                <caret line="14" selection-start-line="14" selection-end-line="14" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/FullWidthPane.svelte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sapperapp/src/appConfiguration.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/MenuButtonPane.svelte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -138,7 +185,6 @@
         <option value="$PROJECT_DIR$/sapperapp/src/components/boxes/CentredTextBox.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/buttons/StandardButton.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/dialogs/MessageDialog.svelte" />
-        <option value="$PROJECT_DIR$/sapperapp/src/components/headers/StandardHeader.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/icons/StandardIcon.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/images/CoverFittingImage.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/images/HeaderImage.svelte" />
@@ -148,7 +194,6 @@
         <option value="$PROJECT_DIR$/sapperapp/src/components/panes/ColoredPane.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/panes/ColumnsPane.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/panes/FullViewPortPane.svelte" />
-        <option value="$PROJECT_DIR$/sapperapp/src/components/panes/FullWidthPane.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/panes/HomeAndCloseButtonsPane.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/panes/MenuButtonPane.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/panes/MenuPane.svelte" />
@@ -177,6 +222,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/CommandsForCoachWebsiteSvelteEdition.md" />
         <option value="$PROJECT_DIR$/sapperapp/src/components/texts/HeadlineText.svelte" />
+        <option value="$PROJECT_DIR$/sapperapp/src/components/headers/StandardHeader.svelte" />
+        <option value="$PROJECT_DIR$/sapperapp/src/components/panes/FullWidthPane.svelte" />
         <option value="$PROJECT_DIR$/sapperapp/src/routes/index.svelte" />
       </list>
     </option>
@@ -245,30 +292,6 @@
               <item name="leadershipcoachfortech-svelte-edition" type="462c0819:PsiDirectoryNode" />
               <item name="sapperapp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="menus" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="leadershipcoachfortech-svelte-edition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="leadershipcoachfortech-svelte-edition" type="462c0819:PsiDirectoryNode" />
-              <item name="sapperapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="panes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="leadershipcoachfortech-svelte-edition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="leadershipcoachfortech-svelte-edition" type="462c0819:PsiDirectoryNode" />
-              <item name="sapperapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="texts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="leadershipcoachfortech-svelte-edition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="leadershipcoachfortech-svelte-edition" type="462c0819:PsiDirectoryNode" />
-              <item name="sapperapp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -302,7 +325,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../writerwebsite" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -362,11 +385,13 @@
       <workItem from="1586103863896" duration="724000" />
       <workItem from="1586267433562" duration="709000" />
       <workItem from="1589900553439" duration="3507000" />
+      <workItem from="1591265196188" duration="21000" />
+      <workItem from="1593620669420" duration="4670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172047000" />
+    <option name="totallyTimeSpent" value="176738000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -422,16 +447,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/ColoredPane.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-          <folding>
-            <element signature="e#171#216#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/ColumnsPane.svelte">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -439,30 +454,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/FullViewPortPane.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#280#325#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/HomeAndCloseButtonsPane.svelte">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/MenuButtonPane.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#248#303#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -585,30 +580,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/FullWidthPane.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-          <folding>
-            <element signature="e#508#634#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/SpaceBetweenPane.svelte">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/texts/NarrationText.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#905#1167#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -618,16 +593,6 @@
           <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
             <element signature="e#618#650#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/footers/StandardFooter.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding>
-            <element signature="e#208#266#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -643,13 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="60" selection-start-line="60" selection-end-line="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sapperapp/src/routes/_layout.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -727,13 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sapperapp/src/appConfiguration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sapperapp/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
@@ -754,33 +705,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sapperapp/static/topics-campaign-creators-testimonials-unsplash-600x400.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/sapperapp/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="210">
-            <caret line="14" selection-start-line="14" selection-end-line="14" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sapperapp/static/topics-campaign-creators-testimonials-unsplash-600x400.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CommandsForCoachWebsiteSvelteEdition.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="375">
-            <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-          </first_editor>
           <second_editor />
         </state>
       </provider>
@@ -795,12 +726,97 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="210">
+            <caret line="14" selection-start-line="14" selection-end-line="14" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CommandsForCoachWebsiteSvelteEdition.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="375">
+            <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/texts/NarrationText.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/footers/StandardFooter.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="29" selection-start-line="8" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/MenuButtonPane.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sapperapp/src/appConfiguration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/FullViewPortPane.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sapperapp/src/routes/_layout.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/headers/StandardHeader.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#208#268#0#HTML" expanded="true" />
+            <element signature="e#1399#1418#0#HTML" expanded="true" />
+            <element signature="e#1432#1438#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sapperapp/src/components/panes/FullWidthPane.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sapperapp/src/routes/index.svelte">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="495">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
           <folding>
-            <element signature="e#2308#2315#0#HTML" expanded="true" />
+            <element signature="e#205#265#0#HTML" expanded="true" />
+            <element signature="e#1919#1925#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
