@@ -12,7 +12,7 @@ help search engines to index the item's page.
 	import {error_message_from_error} from "../../helpers/errorMessages";
 	import * as Sentry from '@sentry/browser';
 
-	export async function preload({ params }) {
+	export async function preload({params}) {
 
 		let [topic, page] = params.slug;
 
@@ -71,6 +71,7 @@ help search engines to index the item's page.
 	import MarginTopPane from "../../components/panes/MarginTopPane.svelte";
 	import SeparatorPane from "../../components/panes/SeparatorPane.svelte";
 	import StandardButton from "../../components/buttons/StandardButton.svelte";
+	import FullWidthPane from "../../components/panes/FullWidthPane.svelte";
 
 	export let dataBundle;
 
@@ -108,6 +109,10 @@ help search engines to index the item's page.
 </svelte:head>
 
 <svelte:window bind:innerWidth={screenWidth} />
+
+<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]} noPadding={true}>
+	<SeparatorPane size="tall"/>
+</FullWidthPane>
 
 <WideContentPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
 	<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}

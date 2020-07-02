@@ -3,6 +3,75 @@
 The title belongs to an item. The slug is what we add to the url of the item to
 help search engines to index the item's page.
 -->
+<script context="module">
+
+	// TODO repetition?
+	// TODO anything to remove?
+	//import {APP_CONFIGURATION} from '../../appConfiguration';
+	import {titleToSlug} from '../helpers/title_to_slug';
+	// import {backgroundColor} from '../../helpers/background_color';
+	import {error_message_from_error} from "../helpers/errorMessages";
+	import * as Sentry from '@sentry/browser';
+
+	export async function preload() {
+
+		console.log("Just a moment before doing the fetch in index.svelte");
+
+		let res;
+
+		// FIXME TODO get rid of try?
+
+		try {
+			res = await this.fetch(`${APP_CONFIGURATION.backendUrl}/rest/LCFT/view/servicesindex?_format=json`);
+		}
+		catch(err) {
+			console.error(err);
+		}
+
+		console.log("Just after the try");
+
+		//console.log(res);
+
+		// return null;
+		//
+
+		// const dataBundle = {
+		// 	services: {}
+		// };
+
+		// return {dataBundle};
+
+		if (!res.ok) {
+
+			console.error("Error in fetching services index", res);
+
+			const error_message = error_message_from_error(res);
+
+			Sentry.captureMessage(error_message);
+
+			throw new Error(error_message);
+
+		} else {
+
+			const jsonresponse = await res.json();
+
+			const services = jsonresponse.results;
+
+			const dataBundle = {
+				services: services
+				// count: jsonresponse.count,
+				// topic: topic,
+				// page: page
+			};
+
+			console.log(dataBundle);
+
+			return {dataBundle};
+		}
+
+	}
+
+</script>
 
 <script>
 	import {backgroundColor} from '../helpers/background_color';
@@ -27,6 +96,19 @@ help search engines to index the item's page.
 
 	let screenWidth;
 
+	export let dataBundle;
+
+	let services_pairs;
+
+	$: services_pairs = dataBundle.services.reduce((services_pairs, service, index, services) => {
+
+		if (index % 2 === 0)
+			services_pairs.push(services.slice(index, index + 2));
+
+		return services_pairs;
+
+	}, []);
+
 </script>
 
 <svelte:head>
@@ -36,14 +118,18 @@ help search engines to index the item's page.
 
 <svelte:window bind:innerWidth={screenWidth} />
 
-<!--TODO fix this-->
+<!--{#each dataBundle.services as service,index}-->
 
+<!--	{service.title}-->
+<!--	{service.nid}-->
+<!--	{APP_CONFIGURATION.backendUrl + service.field_image}-->
+<!--	{service.field_description}-->
 
+<!--{/each}-->
 
-<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]} shortPadding={false}>
-	&nbsp;
+<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]} noPadding={true}>
+	<SeparatorPane size="tall"/>
 </FullWidthPane>
-
 
 <FullViewPortPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["BLUE"]}>
 
@@ -89,6 +175,64 @@ help search engines to index the item's page.
 	</NarrationPane>
 
 </FullViewPortPane>
+
+
+{#each services_pairs as pair_of_services, index}
+
+	<ColumnsPane>
+
+			<span slot="left">
+
+				<StandardLink to={"/article/" + pair_of_services[0].nid + "/" + titleToSlug(pair_of_services[0].title)}>
+
+					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, index)}>
+
+						<OneThirdHeightPane>
+
+							<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_services[0].field_image}
+											   alt={pair_of_services[0].title}/>
+
+						</OneThirdHeightPane>
+
+						<CentredTextBox size="short">
+							<HeadlineText>{pair_of_services[0].title}</HeadlineText>
+						</CentredTextBox>
+
+					</ColoredPane>
+
+				</StandardLink>
+
+			</span>
+
+		<span slot="right">
+
+				{#if pair_of_services.length === 2}
+
+					<StandardLink to={"/article/" + pair_of_services[1].nid + "/" + titleToSlug(pair_of_services[1].title)}>
+
+						<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, false, index)}>
+
+							<OneThirdHeightPane>
+
+								<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_services[1].field_image}
+												   alt={pair_of_services[1].title}/>
+
+							</OneThirdHeightPane>
+
+							<CentredTextBox size="short">
+								<HeadlineText>{pair_of_services[1].title}</HeadlineText>
+							</CentredTextBox>
+
+						</ColoredPane>
+
+					</StandardLink>
+
+				{/if}
+			</span>
+
+	</ColumnsPane>
+
+{/each}
 
 <FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
 

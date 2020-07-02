@@ -10,7 +10,7 @@ help search engines to index the item's page.
 	import {error_message_from_error} from "../../helpers/errorMessages";
 	import * as Sentry from '@sentry/browser';
 
-	export async function preload({ path, params }) {
+	export async function preload({path, params}) {
 
 		let [nid] = params.slug;
 
@@ -51,6 +51,7 @@ help search engines to index the item's page.
 	import SeparatorPane from "../../components/panes/SeparatorPane.svelte";
 	import HeadlineText from "../../components/texts/HeadlineText.svelte";
 	import NarrationText from "../../components/texts/NarrationText.svelte";
+	import FullWidthPane from "../../components/panes/FullWidthPane.svelte";
 
 	export let dataBundle;
 </script>
@@ -69,6 +70,11 @@ help search engines to index the item's page.
 	<meta property='og:url' content={APP_CONFIGURATION.homePageUrl + dataBundle.path} />
 	<title>Leadership Coach for Tech, {dataBundle.article.title}</title>
 </svelte:head>
+
+
+<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]} noPadding={true}>
+	<SeparatorPane size="tall"/>
+</FullWidthPane>
 
 <ContentPane>
 

@@ -21,6 +21,10 @@ help search engines to index the item's page.
 	<title>Leadership Coach for Tech, Contact me</title>
 </svelte:head>
 
+<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]} noPadding={true}>
+	<SeparatorPane size="tall"/>
+</FullWidthPane>
+
 <FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["LIGHTGREY"]}>
 	<ShieldPane>
 		<img src="shield-DARKGREY.png" alt="Leadership Coach for Tech" width="100%" />

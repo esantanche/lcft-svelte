@@ -9,6 +9,7 @@ help search engines to index the item's page.
     export let size = undefined;
 
     const sizes = { "standard": "5vh",
+                    "tall": "11vh",
                     "short": "20px",
                     "veryshort": "10px" };
 

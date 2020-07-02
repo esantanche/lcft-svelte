@@ -4,19 +4,15 @@ The title belongs to an item. The slug is what we add to the url of the item to
 help search engines to index the item's page.
 -->
 
-<script>
-    import {APP_CONFIGURATION} from '../../appConfiguration';
-</script>
-
 <style>
-    .menubuttonpane {
-        /*position: fixed;*/
+    .logopane {
+        width: 50px;
         margin-top: 3vh;
         margin-right: 3vw;
-        color: var(--color);
+        margin-left: 1vw;
     }
 </style>
 
-<div class="menubuttonpane" style="--color: {APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}">
+<div class="logopane">
     <slot></slot>
 </div>

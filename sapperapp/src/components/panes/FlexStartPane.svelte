@@ -5,14 +5,16 @@ help search engines to index the item's page.
 -->
 
 <style>
-    .shieldpane {
-        width: 200px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 6vh;
+
+    .flexstartpane {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
     }
+
 </style>
 
-<div class="shieldpane">
+<div class="flexstartpane" >
     <slot></slot>
 </div>

@@ -18,6 +18,9 @@ help search engines to index the item's page.
     import NarrationText from "../texts/NarrationText.svelte";
     import StandardLink from "../links/StandardLink.svelte";
     import SeparatorPane from "../panes/SeparatorPane.svelte";
+    import HeaderImage from "../images/HeaderImage.svelte";
+    import LogoPane from "../panes/LogoPane.svelte";
+    import FlexStartPane from "../panes/FlexStartPane.svelte";
 
     let menuButtonVisible = true;
 
@@ -45,21 +48,45 @@ help search engines to index the item's page.
 
 {#if menuButtonVisible}
 
-    <FullWidthPane shortPadding={true}
+    <FullWidthPane noPadding={true}
                    backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]}
                    makeItSticky={true}
-                   doShadow={true}>
+                   doShadow={true}
+                   doTransparency={true}>
 
-        <div style="height: 6vh">
-            &nbsp;
+<!--        TODO this div height 11vh should become a pane-->
+
+        <div style="height: 11vh">
+            <WideContentPane backgroundColor="inherit">
+                <SpaceBetweenPane>
+                    <FlexStartPane>
+
+                        <StandardLink to="/">
+                            <LogoPane>
+                                <img src="shield-DARKGREY.png" alt="Leadership Coach for Tech" width="100%" />
+                            </LogoPane>
+                        </StandardLink>
+                        <div>
+                            <NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
+                                Emanuele Santanché
+                            </NarrationText>
+                            <NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
+                                Leadership coach for technology
+                            </NarrationText>
+                        </div>
+
+                    </FlexStartPane>
+                    <MenuButtonPane>
+
+                        <StandardIcon on:click={onclick} clickable={true}>
+                            menu
+                        </StandardIcon>
+
+                    </MenuButtonPane>
+                </SpaceBetweenPane>
+            </WideContentPane>
         </div>
-        <MenuButtonPane>
 
-            <StandardIcon on:click={onclick} clickable={true}>
-                menu
-            </StandardIcon>
-
-        </MenuButtonPane>
     </FullWidthPane>
 
 
