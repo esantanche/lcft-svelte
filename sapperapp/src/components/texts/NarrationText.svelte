@@ -8,6 +8,7 @@ help search engines to index the item's page.
     import { APP_CONFIGURATION } from '../../appConfiguration';
 
     export let color = undefined;
+    export let centered = false;
 
     let screenWidth;
 
@@ -30,6 +31,7 @@ help search engines to index the item's page.
         font-weight: 400;
         color: var(--text-color);
         font-size: var(--font-size);
+        text-align: var(--centered);
     }
 
 </style>
@@ -38,6 +40,7 @@ help search engines to index the item's page.
 
 <div class="narrationtext" style="--font-family: {APP_CONFIGURATION.fontFamily};
                                   --text-color: {color ? color : APP_CONFIGURATION.defaultColorsTable['WHITESHADE']};
-                                  --font-size: {fontSize(screenWidth, APP_CONFIGURATION)}" >
+                                  --font-size: {fontSize(screenWidth, APP_CONFIGURATION)};
+                                  --centered: {centered ? 'center' : ''}" >
     <slot></slot>
 </div>

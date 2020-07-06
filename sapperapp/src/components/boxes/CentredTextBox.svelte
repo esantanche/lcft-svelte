@@ -1,7 +1,5 @@
 <!--
-@file FIXME Utility function to convert a title to a slug.
-The title belongs to an item. The slug is what we add to the url of the item to
-help search engines to index the item's page.
+@file CentredTextBox.svelte Box with centered text, various heights
 -->
 
 <script>
@@ -9,6 +7,7 @@ help search engines to index the item's page.
     export let size = undefined;
 
     const sizes = { "standard": "25vh",
+                    "tall": "30vh",
                     "short": "15vh",
                     "veryshort": "7vh" };
 

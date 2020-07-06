@@ -11,7 +11,7 @@ help search engines to index the item's page.
     import StandardLink from "../links/StandardLink.svelte";
     import StandardIcon from "../icons/StandardIcon.svelte";
     import MenuPane from "../panes/MenuPane.svelte";
-    import HomeAndCloseButtonsPane from "../panes/HomeAndCloseButtonsPane.svelte";
+    import CloseButtonsPane from "../panes/CloseButtonPane.svelte";
     import PaddingPane from "../panes/PaddingPane.svelte";
     import ContentPane from "../panes/ContentPane.svelte";
     import ColumnsPane from "../panes/ColumnsPane.svelte";
@@ -20,6 +20,7 @@ help search engines to index the item's page.
     import ColoredPane from "../panes/ColoredPane.svelte";
 
     import {createEventDispatcher} from 'svelte';
+    import WideContentPane from "../panes/WideContentPane.svelte";
 
     const dispatch = createEventDispatcher();
 
@@ -54,14 +55,15 @@ help search engines to index the item's page.
 
     <FullWidthPane shortPadding={true}>
 
-        <HomeAndCloseButtonsPane>
-            <PaddingPane isItLeftPadding={true}>
-                <StandardIcon on:click={() => dispatch('home')} clickable={true}>home</StandardIcon>
-            </PaddingPane>
-            <PaddingPane>
-                <StandardIcon on:click={() => dispatch('close')} clickable={true}>close</StandardIcon>
-            </PaddingPane>
-        </HomeAndCloseButtonsPane>
+        <WideContentPane>
+
+            <CloseButtonsPane>
+                <PaddingPane>
+                    <StandardIcon on:click={() => dispatch('close')} clickable={true}>close</StandardIcon>
+                </PaddingPane>
+            </CloseButtonsPane>
+
+        </WideContentPane>
 
     </FullWidthPane>
 

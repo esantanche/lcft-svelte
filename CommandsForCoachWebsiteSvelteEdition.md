@@ -19,6 +19,12 @@ sudo docker run -v /home/esantanche/SwProjects/leadershipcoachfortech-svelte-edi
 [root@e01f42592d53 sapperapp]$ npm run dev
 ```
 
+Consider that I updated sapper later. It went to version 0.27.16.
+
+```bash
+[root@e01f42592d53 sapperapp]$ npm update sapper
+```
+
 # To run the dev server
 
 ```bash

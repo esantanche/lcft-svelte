@@ -10,17 +10,15 @@ help search engines to index the item's page.
     import {APP_CONFIGURATION} from '../../appConfiguration';
 
     import StandardMenu from "../menus/StandardMenu.svelte";
-    import {goto} from '@sapper/app';
     import FullWidthPane from "../panes/FullWidthPane.svelte";
     import WideContentPane from "../panes/WideContentPane.svelte";
 
     import SpaceBetweenPane from "../panes/SpaceBetweenPane.svelte";
     import NarrationText from "../texts/NarrationText.svelte";
     import StandardLink from "../links/StandardLink.svelte";
-    import SeparatorPane from "../panes/SeparatorPane.svelte";
-    import HeaderImage from "../images/HeaderImage.svelte";
     import LogoPane from "../panes/LogoPane.svelte";
     import FlexStartPane from "../panes/FlexStartPane.svelte";
+    import SpacerPane from "../panes/SpacerPane.svelte";
 
     let menuButtonVisible = true;
 
@@ -36,14 +34,6 @@ help search engines to index the item's page.
 
     }
 
-    function onhome() {
-
-        menuButtonVisible = true;
-
-        goto("/");
-
-    }
-
 </script>
 
 {#if menuButtonVisible}
@@ -54,9 +44,7 @@ help search engines to index the item's page.
                    doShadow={true}
                    doTransparency={true}>
 
-<!--        TODO this div height 11vh should become a pane-->
-
-        <div style="height: 11vh">
+        <SpacerPane>
             <WideContentPane backgroundColor="inherit">
                 <SpaceBetweenPane>
                     <FlexStartPane>
@@ -85,32 +73,10 @@ help search engines to index the item's page.
                     </MenuButtonPane>
                 </SpaceBetweenPane>
             </WideContentPane>
-        </div>
+        </SpacerPane>
 
     </FullWidthPane>
 
-
-<!--    <WideContentPane backgroundColor="inherit">-->
-<!--        <SpaceBetweenPane>-->
-<!--            <div>-->
-<!--                <NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>-->
-<!--                    Emanuele Santanché-->
-<!--                </NarrationText>-->
-<!--                <NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>-->
-<!--                    Leadership coach for technology-->
-<!--                </NarrationText>-->
-<!--            </div>-->
-<!--            <NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>-->
-<!--                <StandardLink to="/article/58/privacy-policy">-->
-<!--                    Privacy policy-->
-<!--                </StandardLink>-->
-<!--            </NarrationText>-->
-<!--        </SpaceBetweenPane>-->
-<!--    </WideContentPane>-->
-<!--    <SeparatorPane size="short" />-->
-
-
 {:else}
-    <StandardMenu on:close={onclose}
-                  on:home={onhome} />
+    <StandardMenu on:close={onclose}/>
 {/if}

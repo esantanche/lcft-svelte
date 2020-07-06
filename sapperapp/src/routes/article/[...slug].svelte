@@ -1,5 +1,5 @@
 <!--
-@file FIXME Utility function to convert a title to a slug.
+@file FIXME doc to do
 The title belongs to an item. The slug is what we add to the url of the item to
 help search engines to index the item's page.
 -->

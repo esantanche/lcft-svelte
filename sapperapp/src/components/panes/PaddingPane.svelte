@@ -17,7 +17,7 @@ help search engines to index the item's page.
 
 </style>
 
-<div class="paddingpane" style="--padding-left: {isItLeftPadding ? '6vw' : '0'};
-                                --padding-right: {isItLeftPadding ? '0' : '6vw'}">
+<div class="paddingpane" style="--padding-left: {isItLeftPadding ? '3.5vw' : '0'};
+                                --padding-right: {isItLeftPadding ? '0' : '3.5vw'}">
     <slot></slot>
 </div>

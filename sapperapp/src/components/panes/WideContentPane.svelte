@@ -43,4 +43,3 @@ help search engines to index the item's page.
                                     --background-color: {backgroundColor ? backgroundColor : "inherit"}" >
     <slot></slot>
 </div>
-

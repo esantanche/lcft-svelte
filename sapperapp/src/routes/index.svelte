@@ -1,45 +1,17 @@
 <!--
-@file FIXME Utility function to convert a title to a slug.
+@file FIXME doc to do
 The title belongs to an item. The slug is what we add to the url of the item to
 help search engines to index the item's page.
 -->
 <script context="module">
 
-	// TODO repetition?
-	// TODO anything to remove?
-	//import {APP_CONFIGURATION} from '../../appConfiguration';
-	import {titleToSlug} from '../helpers/title_to_slug';
-	// import {backgroundColor} from '../../helpers/background_color';
+	import {APP_CONFIGURATION} from '../appConfiguration';
 	import {error_message_from_error} from "../helpers/errorMessages";
 	import * as Sentry from '@sentry/browser';
 
 	export async function preload() {
 
-		console.log("Just a moment before doing the fetch in index.svelte");
-
-		let res;
-
-		// FIXME TODO get rid of try?
-
-		try {
-			res = await this.fetch(`${APP_CONFIGURATION.backendUrl}/rest/LCFT/view/servicesindex?_format=json`);
-		}
-		catch(err) {
-			console.error(err);
-		}
-
-		console.log("Just after the try");
-
-		//console.log(res);
-
-		// return null;
-		//
-
-		// const dataBundle = {
-		// 	services: {}
-		// };
-
-		// return {dataBundle};
+		const res = await this.fetch(`${APP_CONFIGURATION.backendUrl}/rest/LCFT/view/servicesindex?_format=json`);
 
 		if (!res.ok) {
 
@@ -59,12 +31,7 @@ help search engines to index the item's page.
 
 			const dataBundle = {
 				services: services
-				// count: jsonresponse.count,
-				// topic: topic,
-				// page: page
 			};
-
-			console.log(dataBundle);
 
 			return {dataBundle};
 		}
@@ -75,7 +42,7 @@ help search engines to index the item's page.
 
 <script>
 	import {backgroundColor} from '../helpers/background_color';
-	import {APP_CONFIGURATION} from '../appConfiguration';
+	import {titleToSlug} from '../helpers/title_to_slug';
 
 	import FullViewPortPane from "../components/panes/FullViewPortPane.svelte";
 	import FullWidthPane from "../components/panes/FullWidthPane.svelte";
@@ -118,15 +85,6 @@ help search engines to index the item's page.
 
 <svelte:window bind:innerWidth={screenWidth} />
 
-<!--{#each dataBundle.services as service,index}-->
-
-<!--	{service.title}-->
-<!--	{service.nid}-->
-<!--	{APP_CONFIGURATION.backendUrl + service.field_image}-->
-<!--	{service.field_description}-->
-
-<!--{/each}-->
-
 <FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]} noPadding={true}>
 	<SeparatorPane size="tall"/>
 </FullWidthPane>
@@ -139,102 +97,119 @@ help search engines to index the item's page.
 
     <NarrationPane>
 
-		<NarrationText>
+		<HeadlineText large={true}>
+			<i>Emanuele Santanche,<br/>leadership coach for technology.</i>
+		</HeadlineText>
 
-			<HeadlineText large={true}>
-				<i>Emanuele Santanche,<br/>leadership coach for technology.</i>
-			</HeadlineText>
+		<SeparatorPane/>
 
-			<SeparatorPane/>
+		<HeadlineText large={true}>
+			<i>Defending your chances of success<br/>
+				from lousy leadership practices.</i>
+		</HeadlineText>
 
-			<HeadlineText large={true}>
-				<i>Defending your chances of success<br/>
-					from lousy leadership practices.</i>
-			</HeadlineText>
+		<SeparatorPane/>
 
-			<SeparatorPane/>
+		<HeadlineText large={true}>
+				<i>&ndash; Taming the complexity beast &ndash;<br>
+				   &ndash; Catch the tech &ndash;<br>
+				   &ndash; Solving the Agile riddle &ndash;<br>
+				   &ndash; Tackling management by fear &ndash;<br>
+				   &ndash; Managing motivation &ndash;<br>
+				   &ndash; Managing time &ndash;<br>
+				   &ndash; Designing recruitment processes &ndash;</i>
+		</HeadlineText>
 
-			<HeadlineText large={true}>
-				    <i>&ndash; Taming the complexity beast &ndash;<br>
-					   &ndash; Catch the tech &ndash;<br>
-					   &ndash; Solving the Agile riddle &ndash;<br>
-					   &ndash; Tackling management by fear &ndash;<br>
-					   &ndash; Managing motivation &ndash;<br>
-					   &ndash; Managing time &ndash;<br>
-					   &ndash; Designing recruitment processes &ndash;</i>
-			</HeadlineText>
+		<SeparatorPane/>
 
-<!--			&mdash; &rArr;-->
-
-			<SeparatorPane/>
-
-			<SeparatorPane/>
-
-		</NarrationText>
+		<SeparatorPane/>
 
 	</NarrationPane>
 
 </FullViewPortPane>
 
-
-{#each services_pairs as pair_of_services, index}
-
-	<ColumnsPane>
-
-			<span slot="left">
-
-				<StandardLink to={"/article/" + pair_of_services[0].nid + "/" + titleToSlug(pair_of_services[0].title)}>
-
-					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, index)}>
-
-						<OneThirdHeightPane>
-
-							<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_services[0].field_image}
-											   alt={pair_of_services[0].title}/>
-
-						</OneThirdHeightPane>
-
-						<CentredTextBox size="short">
-							<HeadlineText>{pair_of_services[0].title}</HeadlineText>
-						</CentredTextBox>
-
-					</ColoredPane>
-
-				</StandardLink>
-
-			</span>
-
-		<span slot="right">
-
-				{#if pair_of_services.length === 2}
-
-					<StandardLink to={"/article/" + pair_of_services[1].nid + "/" + titleToSlug(pair_of_services[1].title)}>
-
-						<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, false, index)}>
-
-							<OneThirdHeightPane>
-
-								<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_services[1].field_image}
-												   alt={pair_of_services[1].title}/>
-
-							</OneThirdHeightPane>
-
-							<CentredTextBox size="short">
-								<HeadlineText>{pair_of_services[1].title}</HeadlineText>
-							</CentredTextBox>
-
-						</ColoredPane>
-
-					</StandardLink>
-
-				{/if}
-			</span>
-
-	</ColumnsPane>
-
-{/each}
-
 <FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
+
+	<ShieldPane>
+		<img src="shield-BLUE.png" alt="Leadership Coach for Tech" width="100%" />
+	</ShieldPane>
+
+<!--	<SeparatorPane/>-->
+
+	<HeadlineText large={false} color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
+		Services
+	</HeadlineText>
+
+	<SeparatorPane/>
+
+	<WideContentPane>
+
+		{#each services_pairs as pair_of_services, index}
+
+			<ColumnsPane>
+
+					<span slot="left">
+
+						<StandardLink to={"/article/" + pair_of_services[0].nid + "/" + titleToSlug(pair_of_services[0].title)}>
+
+							<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, index)}>
+
+								<OneThirdHeightPane>
+
+									<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_services[0].field_image}
+													   alt={pair_of_services[0].title}/>
+
+								</OneThirdHeightPane>
+
+								<CentredTextBox size="tall">
+									<HeadlineText>{pair_of_services[0].title}</HeadlineText>
+									<NarrationText centered={true}>{pair_of_services[0].field_description}</NarrationText>
+								</CentredTextBox>
+
+							</ColoredPane>
+
+						</StandardLink>
+
+					</span>
+
+				<span slot="right">
+
+						{#if pair_of_services.length === 2}
+
+							<StandardLink to={"/article/" + pair_of_services[1].nid + "/" + titleToSlug(pair_of_services[1].title)}>
+
+								<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, false, index)}>
+
+									<OneThirdHeightPane>
+
+										<CoverFittingImage src={APP_CONFIGURATION.backendUrl + pair_of_services[1].field_image}
+														   alt={pair_of_services[1].title}/>
+
+									</OneThirdHeightPane>
+
+									<CentredTextBox size="tall">
+										<HeadlineText>{pair_of_services[1].title}</HeadlineText>
+										<NarrationText centered={true}>{pair_of_services[1].field_description}</NarrationText>
+									</CentredTextBox>
+
+								</ColoredPane>
+
+							</StandardLink>
+
+						{/if}
+					</span>
+
+			</ColumnsPane>
+
+		{/each}
+
+		<SeparatorPane/>
+
+	</WideContentPane>
+
+</FullWidthPane>
+
+<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["LIGHTGREY"]}>
 
 	<ShieldPane>
 		<img src="shield-DARKGREY.png" alt="Leadership Coach for Tech" width="100%" />
@@ -247,19 +222,21 @@ help search engines to index the item's page.
 		<ColumnsPane>
 			<span slot="left">
 
-				<StandardLink to={"/articles/services/1"}>
+				<StandardLink to={"/articles/tech-watch/1"}>
+
 					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, 0)}>
 
 						<OneThirdHeightPane>
-							<CoverFittingImage src="topics-kate-townsend-services-unsplash-602x400.jpg"
-											   alt="Services" />
+							<CoverFittingImage src="topics-alex-knight-tech-watch-unsplash-600x400.jpg"
+											   alt="Tech watch"/>
 						</OneThirdHeightPane>
 
 						<CentredTextBox size="short">
-							<HeadlineText>Services</HeadlineText>
+							<HeadlineText>Tech watch</HeadlineText>
 						</CentredTextBox>
 
 					</ColoredPane>
+
 				</StandardLink>
 
 			</span>
@@ -332,32 +309,13 @@ help search engines to index the item's page.
 
 	</WideContentPane>
 
-	<WideContentPane>
+<!--	<WideContentPane>-->
 
-		<ColumnsPane>
-			<span slot="left">
+<!--		<ColumnsPane>-->
+<!--			-->
+<!--		</ColumnsPane>-->
 
-				<StandardLink to={"/articles/tech-watch/1"}>
-
-					<ColoredPane backgroundColor={backgroundColor (screenWidth, APP_CONFIGURATION, true, 2)}>
-
-						<OneThirdHeightPane>
-							<CoverFittingImage src="topics-alex-knight-tech-watch-unsplash-600x400.jpg"
-											   alt="Tech watch"/>
-						</OneThirdHeightPane>
-
-						<CentredTextBox size="short">
-							<HeadlineText>Tech watch</HeadlineText>
-						</CentredTextBox>
-
-					</ColoredPane>
-
-				</StandardLink>
-
-			</span>
-		</ColumnsPane>
-
-	</WideContentPane>
+<!--	</WideContentPane>-->
 
 	<SeparatorPane/>
 

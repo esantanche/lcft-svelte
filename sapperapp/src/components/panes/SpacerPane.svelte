@@ -6,16 +6,12 @@ help search engines to index the item's page.
 
 <style>
 
-    .homeandclosebuttonspane {
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        justify-content: space-between;
-        margin-bottom: 5vh;
+    .spacerpane {
+        height: 11vh;
     }
 
 </style>
 
-<div class="homeandclosebuttonspane" >
+<div class="spacerpane" >
     <slot></slot>
 </div>
