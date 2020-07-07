@@ -7,12 +7,17 @@ help search engines to index the item's page.
 <script>
     import { APP_CONFIGURATION } from '../../appConfiguration';
 
+    // Props
+
+    // Background color to use, defaulted to inherit
     export let backgroundColor = undefined;
+
+    // If true, the pane is narrower on large screens
     export let smallEdition = false;
 
     let screenWidth;
 
-    const widths = { standard: { small: 90, medium: 60, large: 50 }, small: { small: 90, medium: 60, large: 40 } }
+    const widths = { standard: { small: 90, medium: 60, large: 50 }, small: { small: 90, medium: 60, large: 40 } };
 
     function contentPaneWidthFromScreenWidth(screenWidth, configuration, smallEdition) {
 

@@ -51,7 +51,7 @@ sudo docker exec -i -t LcftSvelteEdition bash
 1. After the first copy, you need to copy the folders /vol/WORKnARCH/SwProjects/leadershipcoachfortech-svelte-edition/sapperapp/__sapper__/build/ and 
 /vol/WORKnARCH/SwProjects/leadershipcoachfortech-svelte-edition/sapperapp/static/
 1. Also, don't forget to restart the node server (see below)
-1. If it's the testing website, you need the robots.txt file
+1. If it's the testing website, you need the robots.txt file in /srv/sites/testing.leadershipcoachfortech.com/sapperapp/static
 
 # To run the app on the server
 

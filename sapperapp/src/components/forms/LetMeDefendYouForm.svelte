@@ -102,6 +102,10 @@ help search engines to index the item's page.
 </script>
 
 <style>
+    .letmedefendyouform {
+        margin-right: 10px;
+    }
+
     .letmedefendyouform input:invalid, .letmedefendyouform textarea:invalid  {
         background-color: #ffdca8;
     }
@@ -124,7 +128,7 @@ help search engines to index the item's page.
 
     <StandardLabel fieldFor="name">Name</StandardLabel>
     <SeparatorPane size="veryshort" />
-    <input required type="text" id="name" />
+    <input required type="text" id="name" style="margin-right: 10px"/>
 
     <SeparatorPane/>
 

@@ -23,6 +23,7 @@ export const APP_CONFIGURATION = {
     homePageUrl: 'https://leadershipcoachfortech.com',
     // Number of articles in a page of results
     fetchPageSize: 6,
+    // What a topic looks like in the url and in headers
     topicURL2topicLookupTable: {
         "success-stories": "Success stories",
         "testimonials": "Testimonials",

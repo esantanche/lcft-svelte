@@ -104,8 +104,7 @@ help search engines to index the item's page.
 		<SeparatorPane/>
 
 		<HeadlineText large={true}>
-			<i>Defending your chances of success<br/>
-				from lousy leadership practices.</i>
+			<i>Defending your chances of success from lousy leadership practices.</i>
 		</HeadlineText>
 
 		<SeparatorPane/>
@@ -308,14 +307,6 @@ help search engines to index the item's page.
 		</ColumnsPane>
 
 	</WideContentPane>
-
-<!--	<WideContentPane>-->
-
-<!--		<ColumnsPane>-->
-<!--			-->
-<!--		</ColumnsPane>-->
-
-<!--	</WideContentPane>-->
 
 	<SeparatorPane/>
 
