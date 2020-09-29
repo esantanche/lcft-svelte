@@ -1,13 +1,10 @@
 <!--
-@file FIXME Utility function to convert a title to a slug.
-The title belongs to an item. The slug is what we add to the url of the item to
-help search engines to index the item's page.
+@file FIXME TODO
 -->
 
 <script>
     import StandardFooter from "../components/footers/StandardFooter.svelte";
     import StandardHeader from "../components/headers/StandardHeader.svelte";
-    import GoogleAnalytics from "../components/trackers/GoogleAnalytics.svelte";
 
     // The absence of the prop segment triggers this warning: "<Layout> was created with unknown prop 'segment'"
     // But here I don't need this prop and if I define it, I get an error
@@ -17,9 +14,15 @@ help search engines to index the item's page.
 
 <svelte:head>
     <meta property="google-site-verification" content="PMDPQpQDqCmyGM4HeruuOXemu1X9UxBcU9qop3ywqOQ" />
-</svelte:head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71688245-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-<GoogleAnalytics />
+        gtag('config', 'UA-71688245-2');
+    </script>
+</svelte:head>
 
 <StandardHeader />
 
