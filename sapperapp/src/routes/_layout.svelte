@@ -5,6 +5,7 @@
 <script>
     import StandardFooter from "../components/footers/StandardFooter.svelte";
     import StandardHeader from "../components/headers/StandardHeader.svelte";
+    import RDFaTags from "../components/tags/RDFaTags.svelte";
 
     // The absence of the prop segment triggers this warning: "<Layout> was created with unknown prop 'segment'"
     // But here I don't need this prop and if I define it, I get an error
@@ -23,6 +24,8 @@
         gtag('config', 'UA-71688245-2');
     </script>
 </svelte:head>
+
+<RDFaTags />
 
 <StandardHeader />
 
