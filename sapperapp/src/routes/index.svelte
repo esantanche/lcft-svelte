@@ -104,15 +104,15 @@ help search engines to index the item's page.
 		<SeparatorPane/>
 
 		<HeadlineText large={true}>
-			<i>Defending your chances of success from lousy leadership practices.</i>
+			<i>Improving your chances of success in making smart technological choices and helping you develop leadership practices that improve motivation, productivity and problem solving skills.</i>
 		</HeadlineText>
 
 		<SeparatorPane/>
 
 		<HeadlineText large={true}>
-				<i>&ndash; Taming the complexity beast &ndash;<br>
-				   &ndash; Catch the tech &ndash;<br>
+				<i>&ndash; Catch the tech &ndash;<br>
 				   &ndash; Solving the Agile riddle &ndash;<br>
+				   &ndash; Taming the complexity beast &ndash;<br>
 				   &ndash; Tackling management by fear &ndash;<br>
 				   &ndash; Managing motivation &ndash;<br>
 				   &ndash; Managing time &ndash;<br>

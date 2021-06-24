@@ -59,7 +59,7 @@ help search engines to index the item's page.
                                 Emanuele Santanché
                             </NarrationText>
                             <NarrationText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
-                                Leadership coach for technology
+                                Leadership coach for technology xxx
                             </NarrationText>
                         </div>
 
