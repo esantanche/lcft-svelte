@@ -92,7 +92,7 @@ help search engines to index the item's page.
 <FullViewPortPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["BLUE"]}>
 
 	<ShieldPane>
-	    <img src="shield-DARKGREY.png" alt="Leadership Coach for Tech" width="100%" />
+	    <img src="logo-lcft.png" alt="Leadership Coach for Tech" width="100%" />
 	</ShieldPane>
 
     <NarrationPane>
@@ -129,9 +129,9 @@ help search engines to index the item's page.
 
 <FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
 
-	<ShieldPane>
-		<img src="shield-BLUE.png" alt="Leadership Coach for Tech" width="100%" />
-	</ShieldPane>
+<!--	<ShieldPane>-->
+<!--		<img src="logo-lcft.png" alt="Leadership Coach for Tech" width="100%" />-->
+<!--	</ShieldPane>-->
 
 <!--	<SeparatorPane/>-->
 
@@ -210,9 +210,9 @@ help search engines to index the item's page.
 
 <FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["LIGHTGREY"]}>
 
-	<ShieldPane>
-		<img src="shield-DARKGREY.png" alt="Leadership Coach for Tech" width="100%" />
-	</ShieldPane>
+<!--	<ShieldPane>-->
+<!--		<img src="shield-DARKGREY.png" alt="Leadership Coach for Tech" width="100%" />-->
+<!--	</ShieldPane>-->
 
 	<SeparatorPane/>
 
@@ -313,9 +313,10 @@ help search engines to index the item's page.
 </FullWidthPane>
 
 <FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["DARKGREY"]}>
-	<ShieldPane>
-		<img src="shield-LIGHTGREY.png" alt="Leadership Coach for Tech" width="100%" />
-	</ShieldPane>
+
+<!--	<ShieldPane>-->
+<!--		<img src="shield-LIGHTGREY.png" alt="Leadership Coach for Tech" width="100%" />-->
+<!--	</ShieldPane>-->
 
 	<NarrationPane>
 		<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>

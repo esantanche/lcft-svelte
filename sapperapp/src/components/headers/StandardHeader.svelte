@@ -51,7 +51,7 @@ help search engines to index the item's page.
 
                         <StandardLink to="/">
                             <LogoPane>
-                                <img src="shield-DARKGREY.png" alt="Leadership Coach for Tech" width="100%" />
+                                <img src="logo-lcft.png" alt="Leadership Coach for Tech" width="100%" />
                             </LogoPane>
                         </StandardLink>
                         <div>
