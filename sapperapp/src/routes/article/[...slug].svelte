@@ -66,7 +66,8 @@ help search engines to index the item's page.
 	<meta property="og:image" content={dataBundle.article.field_header_image ?
 		  APP_CONFIGURATION.backendUrl + dataBundle.article.field_header_image :
 		  APP_CONFIGURATION.backendUrl + dataBundle.article.field_image} />
-	<meta property='og:description' content={dataBundle.article.title} />
+	<meta property='og:description' content={dataBundle.article.field_description} />
+	<meta name=”description” content={dataBundle.article.field_description}>
 	<meta property='og:url' content={APP_CONFIGURATION.homePageUrl + dataBundle.path} />
 	<title>Leadership Coach for Tech, {dataBundle.article.title}</title>
 </svelte:head>
