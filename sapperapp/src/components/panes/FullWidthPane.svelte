@@ -11,6 +11,7 @@ This is a 100vw pane.
     export let shortPadding = false;
     export let noPadding = false;
     export let makeItSticky = false;
+    export let stickToBottom = false;
     export let doShadow = false;
     export let doTransparency = false;
 </script>
@@ -22,6 +23,7 @@ This is a 100vw pane.
         padding-top: var(--padding-top);
         background-color: var(--background-color);
         position: var(--position);
+        bottom: var(--bottom);
         box-shadow: var(--boxshadow);
         -moz-box-shadow: var(--boxshadow);
         -webkit-box-shadow: var(--boxshadow);
@@ -32,6 +34,7 @@ This is a 100vw pane.
 <div class="fullwidthpane" style="--background-color: {backgroundColor};
                                   --padding-top: {noPadding ? '' : (shortPadding ? '3vh' : '7vh')};
                                   --position: {makeItSticky ? 'fixed' : 'static'};
+                                  --bottom: {stickToBottom ? '0px' : ''};
                                   --boxshadow: {doShadow ? '0px 5px 0px -3px rgba(0,0,0,0.75)' : ''};
                                   --opacity: {doTransparency ? '70%' : '' }">
     <slot></slot>

@@ -134,7 +134,7 @@ help search engines to index the item's page.
 
         <ColumnsPane>
 			<span slot="left">
-                <StandardLink to="/let-me-defend-you" on:click={() => dispatch('close')}>
+                <StandardLink to="/contact-me" on:click={() => dispatch('close')}>
                     <ColoredPane backgroundColor={colorForCentredTextBox(screenWidth, 4, 'left')}>
                         <CentredTextBox size="veryshort">
                             <HeadlineText>Contact me</HeadlineText>

@@ -32,5 +32,5 @@ help search engines to index the item's page.
             </NarrationText>
         </SpaceBetweenPane>
     </WideContentPane>
-    <SeparatorPane size="short" />
+    <SeparatorPane size="tall" />
 </FullWidthPane>

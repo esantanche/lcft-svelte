@@ -2,6 +2,9 @@
 @file FIXME Utility function to convert a title to a slug.
 The title belongs to an item. The slug is what we add to the url of the item to
 help search engines to index the item's page.
+
+You read "Let me defend you" many times, but it's an old expression.
+I left it because I didn't want to change everything.
 -->
 
 <script>

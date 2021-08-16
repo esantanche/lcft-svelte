@@ -8,7 +8,6 @@ help search engines to index the item's page.
 	import {APP_CONFIGURATION} from '../appConfiguration';
 
 	import FullWidthPane from "../components/panes/FullWidthPane.svelte";
-	import ShieldPane from "../components/panes/ShieldPane.svelte";
 	import HeadlineText from "../components/texts/HeadlineText.svelte";
 	import SeparatorPane from "../components/panes/SeparatorPane.svelte";
 	import ContentPane from "../components/panes/ContentPane.svelte";
@@ -26,9 +25,6 @@ help search engines to index the item's page.
 </FullWidthPane>
 
 <FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["LIGHTGREY"]}>
-	<ShieldPane>
-		<img src="shield-DARKGREY.png" alt="Leadership Coach for Tech" width="100%" />
-	</ShieldPane>
 
 	<NarrationPane>
 		<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>

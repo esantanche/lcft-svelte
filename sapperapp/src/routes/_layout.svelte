@@ -4,6 +4,7 @@
 
 <script>
     import StandardFooter from "../components/footers/StandardFooter.svelte";
+    import StickyFooter from "../components/footers/StickyFooter.svelte";
     import StandardHeader from "../components/headers/StandardHeader.svelte";
     import RDFaTags from "../components/tags/RDFaTags.svelte";
 
@@ -32,3 +33,5 @@
 <slot></slot>
 
 <StandardFooter />
+
+<StickyFooter />
