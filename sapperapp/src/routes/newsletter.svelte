@@ -58,9 +58,10 @@ help search engines to index the item's page.
 	import HeadlineText from "../components/texts/HeadlineText.svelte";
 	import SeparatorPane from "../components/panes/SeparatorPane.svelte";
 	import ContentPane from "../components/panes/ContentPane.svelte";
-	import LetMeDefendYouForm from "../components/forms/LetMeDefendYouForm.svelte";
-	import NarrationPane from "../components/panes/NarrationPane.svelte";
+    import NewsletterForm from "../components/forms/NewsletterForm.svelte";
+    import NarrationPane from "../components/panes/NarrationPane.svelte";
 	import NarrationText from "../components/texts/NarrationText.svelte";
+	import HeaderImage from "../components/images/HeaderImage.svelte";
 
 	export let dataBundle;
 
@@ -74,9 +75,17 @@ help search engines to index the item's page.
 	<SeparatorPane size="tall"/>
 </FullWidthPane>
 
-<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["BLUE"]}>
+<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["LIGHTGREY"]}>
 
 	<ContentPane>
+
+		{#if dataBundle.article.field_header_image}
+			<HeaderImage src={APP_CONFIGURATION.backendUrl + dataBundle.article.field_header_image}
+						 alt={dataBundle.article.title}
+						 backgroundColor={APP_CONFIGURATION.defaultColorsTable["DARKGREY"]} />
+		{/if}
+
+		<SeparatorPane />
 
 		<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}
 					  large={true}>
@@ -95,7 +104,7 @@ help search engines to index the item's page.
 
 	<NarrationPane>
 		<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
-			ContFIXME subscribe to newsletter act me
+			Enter your email address and click "Subscribe" to get the free course and the newsletter.
 		</HeadlineText>
 	</NarrationPane>
 
@@ -103,9 +112,7 @@ help search engines to index the item's page.
 
 	<ContentPane>
 
-FIXME here the form for the newsletter
-
-<!--		<LetMeDefendYouForm />-->
+        <NewsletterForm />
 
 	</ContentPane>
 

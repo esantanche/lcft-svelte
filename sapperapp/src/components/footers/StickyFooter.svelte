@@ -21,7 +21,7 @@
         <div>
             <NarrationText centered={true} color={APP_CONFIGURATION.defaultColorsTable["VERYDARKGREY"]}>
                 <StandardLink to={"/newsletter"}>
-                Click here to get your free copy of my course "The Secrets of Management"
+                Click here to get the free course "The Secrets of Management"
                 </StandardLink>
             </NarrationText>
         </div>

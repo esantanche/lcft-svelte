@@ -142,6 +142,15 @@ help search engines to index the item's page.
                     </ColoredPane>
                 </StandardLink>
 			</span>
+            <span slot="right">
+                <StandardLink to="/newsletter" on:click={() => dispatch('close')}>
+                    <ColoredPane backgroundColor={colorForCentredTextBox(screenWidth, 4, 'right')}>
+                        <CentredTextBox size="veryshort">
+                            <HeadlineText>Free course</HeadlineText>
+                        </CentredTextBox>
+                </ColoredPane>
+                </StandardLink>
+			</span>
         </ColumnsPane>
 
     </ContentPane>
