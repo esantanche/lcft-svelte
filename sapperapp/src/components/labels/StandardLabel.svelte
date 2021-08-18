@@ -1,7 +1,5 @@
 <!--
-@file FIXME Utility function to convert a title to a slug.
-The title belongs to an item. The slug is what we add to the url of the item to
-help search engines to index the item's page.
+@file FIXME
 -->
 
 <script>
@@ -9,6 +7,7 @@ help search engines to index the item's page.
     import { APP_CONFIGURATION } from '../../appConfiguration';
 
     export let fieldFor;
+    export let useDarkTextColor = false;
 
 </script>
 
@@ -24,6 +23,6 @@ help search engines to index the item's page.
 </style>
 
 <label for={fieldFor} class="label" style="--font-family: {APP_CONFIGURATION.fontFamily};
-                                           --color: {APP_CONFIGURATION.defaultColorsTable['WHITESHADE']}">
+                                           --color: {useDarkTextColor ? APP_CONFIGURATION.defaultColorsTable['DARKGREY'] : APP_CONFIGURATION.defaultColorsTable['WHITESHADE']}">
     <slot></slot>
 </label>

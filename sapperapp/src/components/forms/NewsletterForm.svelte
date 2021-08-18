@@ -1,7 +1,5 @@
 <!--
-@file FIXME Utility function to convert a title to a slug.
-The title belongs to an item. The slug is what we add to the url of the item to
-help search engines to index the item's page.
+@file FIXME
 
 You read "Let me defend you" many times, but it's an old expression.
 I left it because I didn't want to change everything.
@@ -76,7 +74,7 @@ I left it because I didn't want to change everything.
         target="_blank"
 >
 
-    <StandardLabel fieldFor="email">Email</StandardLabel>
+    <StandardLabel fieldFor="email" useDarkTextColor={true}>Email</StandardLabel>
     <SeparatorPane size="veryshort" />
     <input required type="email" name="EMAIL" id="email" />
 

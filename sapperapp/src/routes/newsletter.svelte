@@ -1,9 +1,6 @@
 <!--
-@file FIXME Utility function to convert a title to a slug.
-The title belongs to an item. The slug is what we add to the url of the item to
-help search engines to index the item's page.
+@file FIXME
 -->
-
 
 <script context="module">
 
@@ -13,13 +10,11 @@ help search engines to index the item's page.
 
 	export async function preload({path, params}) {
 
-		// FIXME the 254 should be a parameter?
+		// FIXME the 254 should be a parameter? Maybe it could stay in app configuration
 
 		// FIXME what is path for?
 
 		const nid_of_newsletter_landing_page = 254;
-
-		//let [nid] = params.slug;
 
 		const res = await this.fetch(`${APP_CONFIGURATION.backendUrl}/rest/EMS/view/article?_format=json&nid=${nid_of_newsletter_landing_page}`);
 
@@ -82,7 +77,7 @@ help search engines to index the item's page.
 	<SeparatorPane size="tall"/>
 </FullWidthPane>
 
-<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["LIGHTGREY"]}>
+<FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
 
 	<ContentPane>
 
@@ -110,7 +105,7 @@ help search engines to index the item's page.
 	</ContentPane>
 
 	<NarrationPane>
-		<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
+		<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["DARKGREY"]}>
 			Enter your email address to get the free course and the newsletter.
 		</HeadlineText>
 	</NarrationPane>
