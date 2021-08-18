@@ -68,7 +68,14 @@ help search engines to index the item's page.
 </script>
 
 <svelte:head>
-	<title>Leadership Coach for Tech, Contact me</title>
+	<meta property="og:title" content={dataBundle.article.title} />
+	<meta property="og:image" content={dataBundle.article.field_header_image ?
+		  APP_CONFIGURATION.backendUrl + dataBundle.article.field_header_image :
+		  APP_CONFIGURATION.backendUrl + dataBundle.article.field_image} />
+	<meta property='og:description' content={dataBundle.article.field_description} />
+	<meta name=”description” content={dataBundle.article.field_description}>
+	<meta property='og:url' content={APP_CONFIGURATION.homePageUrl + dataBundle.path} />
+	<title>Leadership Coach for Tech, get my free course "The Secrets of Management"</title>
 </svelte:head>
 
 <FullWidthPane backgroundColor={APP_CONFIGURATION.defaultColorsTable["WHITESHADE"]} noPadding={true}>
@@ -104,7 +111,7 @@ help search engines to index the item's page.
 
 	<NarrationPane>
 		<HeadlineText color={APP_CONFIGURATION.defaultColorsTable["DARKERWHITESHADE"]}>
-			Enter your email address and click "Subscribe" to get the free course and the newsletter.
+			Enter your email address to get the free course and the newsletter.
 		</HeadlineText>
 	</NarrationPane>
 
